@@ -5,6 +5,7 @@
 class Prize
   # Consultores de acceso
   attr_reader :treasure
+  
   attr_reader :level
   
   
