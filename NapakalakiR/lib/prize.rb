@@ -3,6 +3,10 @@
 # and open the template in the editor.
 
 class Prize
+  # Consultores de acceso
+  attr_reader :treasure
+  attr_reader :level
+  
   
   # Constructor
   def initialize( treasures, level)
@@ -10,15 +14,6 @@ class Prize
     @level = level
   end
   
-  # Consultores
-  
-  def treasures
-    @treasures
-  end
-  
-  def level
-    @level
-  end
   
   
   
