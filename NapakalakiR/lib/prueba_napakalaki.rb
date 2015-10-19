@@ -5,9 +5,6 @@ require 'prize'
 require 'bad_consequence'
 require 'monster'
 
-puts "Hello World"
-texto="Jose"
-puts texto
 prize1 = Prize.new(2,1)
 puts prize1.level
 puts prize1.treasures
