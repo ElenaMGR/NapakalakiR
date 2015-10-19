@@ -62,4 +62,12 @@ class BadConsequence
     @someSpecificVisibleTreasures=nil
     @someSpecificHiddenTreasures=nil
   end
+  
+  def to_s
+    "Mal rollo: #{@aText} \n Niveles perdidos: #{@someLevels}, Tesoros visibles: 
+    #{@someVisibleTreasures}, Tesoros ocultos: #{@someHiddenTreasures},
+    Tesoros específicos visibles: #{@someSpecificVisibleTreasures},
+    Tesoros específicos ocultos: #{@someSpecificHiddenTreasures},
+    Muerto: #{@death}."
+  end
 end
