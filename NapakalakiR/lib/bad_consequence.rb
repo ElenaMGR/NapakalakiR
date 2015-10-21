@@ -21,47 +21,34 @@ class BadConsequence
     @someHiddenTreasures=someHiddenTreasures
     @someSpecificVisibleTreasures=someSpecificVisibleTreasures
     @someSpecificHiddenTreasures=someSpecificHiddenTreasures
-    @death=death
+    @death=death    
   end
   
-  def BadConsequence.newLevelNumberOfTreasures (aText, someLevels, someVisibleTreasures, 
+  def self.newLevelNumberOfTreasures (aText, someLevels, someVisibleTreasures, 
       someHiddenTreasures)
-    @aText=aText
-    @death=false
-    @someLevels=someLevels
-    @someVisibleTreasures=someVisibleTreasures
-    @someHiddenTreasures=someHiddenTreasures
-    @someSpecificVisibleTreasures=nil
-    @someSpecificHiddenTreasures=nil
+    new(aText, someLevels, someVisibleTreasures,someHiddenTreasures,Array.new,Array.new,false)
   end
 
-  def BadConsequence.newLevelSpecificTreasures (aText, someLevels, 
+  def self.newLevelSpecificTreasures (aText, someLevels, 
       someSpecificVisibleTreasures, someSpecificHiddenTreasures)
-    @aText=aText
-    @death=false
-    @someLevels=someLevels 
-    @someSpecificVisibleTreasures=someSpecificVisibleTreasures
-    @someSpecificHiddenTreasures=someSpecificHiddenTreasures
-    if (someSpecificVisibleTreasures!=nil)
-      @someVisibleTreasures=someSpecificVisibleTreasures.size
+    
+    if (!someSpecificVisibleTreasures.empty?)
+      visible=someSpecificVisibleTreasures.size
     else
-      @someVisibleTreasures=0
+      visible=0
     end
-    if (someSpecificHiddenTreasures!=nil)
-      @someHiddenTreasures=someSpecificHiddenTreasures.size
+    if (!someSpecificHiddenTreasures.empty?)
+      oculto=someSpecificHiddenTreasures.size
     else
-      @someHiddenTreasures=0
+      oculto=0
     end
+    new(aText,someLevels,visible,oculto,someSpecificVisibleTreasures,someSpecificHiddenTreasures,false)
+   
   end
+  
+  def self.newDeath (aText)
+     new(aText,0,0,0,Array.new,Array.new,true)
 
-  def BadConsequence.newDeath (aText)
-    @aText=aText
-    @death=true
-    @someLevels=0
-    @someVisibleTreasures=0
-    @someHiddenTreasures=0
-    @someSpecificVisibleTreasures=nil
-    @someSpecificHiddenTreasures=nil
   end
   
   def to_s
