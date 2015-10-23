@@ -32,17 +32,7 @@ class BadConsequence
   def self.newLevelSpecificTreasures (aText, someLevels, 
       someSpecificVisibleTreasures, someSpecificHiddenTreasures)
     
-    if (!someSpecificVisibleTreasures.empty?)
-      visible=someSpecificVisibleTreasures.size
-    else
-      visible=0
-    end
-    if (!someSpecificHiddenTreasures.empty?)
-      oculto=someSpecificHiddenTreasures.size
-    else
-      oculto=0
-    end
-    new(aText,someLevels,visible,oculto,someSpecificVisibleTreasures,someSpecificHiddenTreasures,false)
+    new(aText,someLevels,0,0,someSpecificVisibleTreasures,someSpecificHiddenTreasures,false)
    
   end
   
