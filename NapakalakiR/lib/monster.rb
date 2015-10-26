@@ -15,4 +15,9 @@ class Monster
     @bc = bc
     @prize = prize    
   end
+  
+  def to_s
+    "Nombre: #{@aText}, CombatLevel: #{@combatlevel} \n Mal rollo: #{@bc.to_s},
+    Buen rollo: #{@prize.to_s}"
+  end
 end
