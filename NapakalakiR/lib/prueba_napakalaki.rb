@@ -30,40 +30,32 @@ monsters = Array.new
 
 
 prize = Prize.new(2,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes tu armadura visible y otra 
-  oculta', 0,[TreasureKind::ARMOR],[TreasureKind::ARMOR])
+badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes tu armadura visible y otra oculta', 0,[TreasureKind::ARMOR],[TreasureKind::ARMOR])
 monsters << Monster.new('3 Byakhees de bonanza', 8, prize, badConsequence)
 
 prize = Prize.new(1,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('Embobados con el lindo
-  primigenio te descartas de tu casco visible', 0,[TreasureKind::HELMET],Array.new)
+badConsequence = BadConsequence.newLevelSpecificTreasures('Embobados con el lindo primigenio te descartas de tu casco visible', 0,[TreasureKind::HELMET],Array.new)
 monsters << Monster.new('Chibithulhu', 2, prize, badConsequence)
 
 prize = Prize.new(1,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('El primordial bostezo
-  contagioso. Pierdes el calzado visible', 0,[TreasureKind::SHOES],Array.new)
+badConsequence = BadConsequence.newLevelSpecificTreasures('El primordial bostezo contagioso. Pierdes el calzado visible', 0,[TreasureKind::SHOES],Array.new)
 monsters << Monster.new('El sopor de Dunwich', 2, prize, badConsequence)
 
 
 prize = Prize.new(4,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('Te atrapan para llevarte 
-  de fiesta y te dejan caer en mitad del vuelo. Descarta 1 mano visible 
-  y 1 mano oculta', 0,[TreasureKind::ONEHAND],[TreasureKind::ONEHAND])
+badConsequence = BadConsequence.newLevelSpecificTreasures('Te atrapan para llevarte de fiesta y te dejan caer en mitad del vuelo. Descarta 1 mano visible y 1 mano oculta', 0,[TreasureKind::ONEHAND],[TreasureKind::ONEHAND])
 monsters << Monster.new('Angeles de la noche ibicenca', 14, prize, badConsequence)
 
 price = Prize.new(3,1)
-badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes todos tus tesoros
-  visibles',0 , 6, 0)
+badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes todos tus tesoros visibles',0 , 6, 0)
 monsters << Monster.new('El gorron en el umbral',10,price,badConsequence)
 
 prize = Prize.new(2,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes la armadura 
-  visible', 0,[TreasureKind::ARMOR],Array.new)
+badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes la armadura visible', 0,[TreasureKind::ARMOR],Array.new)
 monsters << Monster.new('H.P. Munchcraft', 6, prize, badConsequence)
 
 prize = Prize.new(1,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('Sientes bichos bajo la
-  ropa. Descarta la armadura visible', 0,[TreasureKind::ARMOR],Array.new)
+badConsequence = BadConsequence.newLevelSpecificTreasures('Sientes bichos bajo la ropa. Descarta la armadura visible', 0,[TreasureKind::ARMOR],Array.new)
 monsters << Monster.new('Bichgooth', 2, prize, badConsequence)
 
 price = Prize.new(4,2)
@@ -71,28 +63,23 @@ badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes 5 niveles y 3
 monsters << Monster.new('El rey de rosa',13,price,badConsequence)
 
 price = Prize.new(1,1)
-badConsequence = BadConsequence.newLevelNumberOfTreasures('Toses los pulmones y
-  pierdes 2 niveles.',2 , 0, 0)
+badConsequence = BadConsequence.newLevelNumberOfTreasures('Toses los pulmones y pierdes 2 niveles.',2 , 0, 0)
 monsters << Monster.new('La que redacta en las tinieblas',2,price,badConsequence)
 
 price = Prize.new(2,1)
-badConsequence = BadConsequence.newDeath("Estos monstruos resultan bastante 
-  superficiales y te aburren mortalmente. Estas muerto")
+badConsequence = BadConsequence.newDeath("Estos monstruos resultan bastante superficiales y te aburren mortalmente. Estas muerto")
 monsters << Monster.new('Los hondos',8,price,badConsequence)
 
 price = Prize.new(2,1)
-badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes 2 niveles y 2
-  tesoros ocultos.',2 , 0, 2)
+badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes 2 niveles y 2 tesoros ocultos.',2 , 0, 2)
 monsters << Monster.new('Semillas Cthulhu',4,price,badConsequence)
 
 prize = Prize.new(2,1)
-badConsequence = BadConsequence.newLevelSpecificTreasures('Te intentas escaquear.
-  Pierdes una mano visible.', 0,[TreasureKind::ONEHAND],Array.new)
+badConsequence = BadConsequence.newLevelSpecificTreasures('Te intentas escaquear. Pierdes una mano visible.', 0,[TreasureKind::ONEHAND],Array.new)
 monsters << Monster.new('Dameargo', 1, prize, badConsequence)
 
 price = Prize.new(1,1)
-badConsequence = BadConsequence.newLevelNumberOfTreasures('Da mucho asquito.
-  Pierdes 3 niveles.',3 , 0, 0)
+badConsequence = BadConsequence.newLevelNumberOfTreasures('Da mucho asquito. Pierdes 3 niveles.',3 , 0, 0)
 monsters << Monster.new('Pollipolipo volante',3,price,badConsequence)
 
 price = Prize.new(3,1)
