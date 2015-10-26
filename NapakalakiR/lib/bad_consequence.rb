@@ -5,6 +5,8 @@
 require_relative 'treasure_kind'
 
 class BadConsequence
+  #attr_accessor
+  #attr_writter
   attr_reader :aText
   attr_reader :someLevels
   attr_reader :someVisibleTreasures
