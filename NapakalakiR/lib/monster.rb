@@ -9,7 +9,7 @@ class Monster
   attr_reader :bc
   attr_reader :prize
   
-  def initialize(name,combatlevel,bc,prize)
+  def initialize(name,combatlevel,prize,bc)
     @name = name
     @combatlevel = combatlevel
     @bc = bc
