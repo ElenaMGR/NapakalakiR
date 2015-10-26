@@ -1,3 +1,4 @@
+#encoding: utf-8
 # To change this license header, choose License Headers in Project Properties.
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
@@ -112,5 +113,75 @@ monsters << Monster.new("Bicefalo",20,price,badConsequence)
 
 
 
-monsters.each { |m|puts m.to_s}
+#monsters.each { |m|puts m.to_s}
 
+
+
+
+def combateSuperior10(m)
+  resultado = Array.new
+  m.each { |mo| 
+    if(mo.combatlevel>10)
+      resultado<<mo
+    end
+    }
+  return resultado
+end
+
+
+def malRolloSoloPerdidaNiveles(m)
+  resultado = Array.new
+  m.each { |mo| 
+    if(mo.bc.someLevels>0 && mo.bc.someVisibleTreasures==0 && mo.bc.someHiddenTreasures==0 && mo.bc.someSpecificHiddenTreasures.empty? && mo.bc.someSpecificVisibleTreasures.empty?)
+      resultado<<mo
+    end
+    }
+  return resultado
+end
+
+
+def priceWinLvlG1(m)
+  resultado = Array.new
+  m.each { |mo| 
+    if(mo.prize.level>1)
+      resultado<<mo
+    end
+    }
+  return resultado
+end
+
+
+def bcLostSpecificTreasure(m)
+  resultado = Array.new
+  m.each { |mo| 
+    if(!mo.bc.someSpecificHiddenTreasures.empty? || !mo.bc.someSpecificVisibleTreasures.empty? )
+      resultado<<mo
+    end
+    }
+  return resultado
+end
+
+
+res = Array.new
+res = combateSuperior10(monsters)
+
+puts "Monstuos con un nivel de combate superior a 10"
+res.each { |m|puts m.to_s}
+
+
+res = malRolloSoloPerdidaNiveles(monsters)
+
+puts "\n\nMonstuos que tienen un mal rollo que solo implica pérdida de niveles"
+res.each { |m|puts m.to_s}
+
+
+res = priceWinLvlG1(monsters)
+
+puts "\n\nMonstuos que tienen un buen rollo que implica una ganancia de niveles superior a 1"
+res.each { |m|puts m.to_s}
+
+
+res = bcLostSpecificTreasure(monsters)
+
+puts "\n\nMonstuos que tienen un mal rollo que implica perdida de un objeto específico"
+res.each { |m|puts m.to_s}
