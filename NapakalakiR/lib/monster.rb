@@ -5,15 +5,15 @@
 class Monster
   # Modificadores de Acceso
   attr_reader :name
-  attr_reader :combatlevel
-  attr_reader :bc
+  attr_reader :combatLevel
+  attr_reader :badConsequence
   attr_reader :prize
   
-  def initialize(name,combatlevel,prize,bc)
-    @name = name
-    @combatlevel = combatlevel
-    @bc = bc
-    @prize = prize    
+  def initialize(n,l,b,p)
+    @name = n
+    @combatLevel = l
+    @badConsequence = b
+    @prize = p    
   end
   
   def to_s
