@@ -49,6 +49,25 @@ module NapakalakiGame
       
     end
     
+    private 
+    def apply_bad_consequence (m)
+      
+    end
+    
+    private
+    def can_make_treasure_visible (t)
+      
+    end
+    
+    private
+    def how_many_visible_treasures (tKind)
+      
+    end
+    
+    private
+    def die_if_no_treasures
+      
+    end
     
   end
 
