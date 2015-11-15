@@ -69,7 +69,7 @@ module NapakalakiGame
       @unusedMonsters << Monster.new('Chibithulhu', 2, badConsequence, prize)
 
       prize = Prize.new(1,1)
-      badConsequence = BadConsequence.newLevelSpecificTreasures('El primordial bostezo contagioso. Pierdes el calzado visible', 0,[TreasureKind::SHOES],Array.new)
+      badConsequence = BadConsequence.newLevelSpecificTreasures('El primordial bostezo contagioso. Pierdes el calzado visible', 0,[TreasureKind::SHOE],Array.new)
       @unusedMonsters << Monster.new('El sopor de Dunwich', 2, badConsequence, prize)
 
 
@@ -79,7 +79,7 @@ module NapakalakiGame
 
       prize = Prize.new(3,1)
       badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes todos tus tesoros visibles',0 , 6, 0)
-      @unusedMonsters << Monster.new('El gorron en el umbral',10,badConsequence, prize)
+      @unusedMonsters << Monster.new('El gorron en el umbral',BadConsequence.MAXTREASURES,badConsequence, prize)
 
       prize = Prize.new(2,1)
       badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes la armadura visible', 0,[TreasureKind::ARMOR],Array.new)
