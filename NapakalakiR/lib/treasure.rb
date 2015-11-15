@@ -5,17 +5,18 @@
 
 module NapakalakiGame
   
-class Treasure
-  
-  # Consultores de acceso
-  attr_reader :name, :bonus, :type
-  
-  # Constructor
-  def initialize (n, bonus, t)
-    @name = n
-    @bonus = bonus
-    @type = t
+  class Treasure
+
+    # Consultores de acceso
+    attr_reader :name, :bonus, :type
+
+    # Constructor
+    def initialize (n, bonus, t)
+      @name = n
+      @bonus = bonus
+      @type = t
+    end
+
   end
-end
 
 end
