@@ -66,12 +66,20 @@ module NapakalakiGame
     
     private
     def how_many_visible_treasures (tKind)
-      
+      num=0
+      @visibleTreasures.each { |v| 
+        if (v.type==tKind)
+          num+=1
+        end
+      }
+      return num
     end
     
     private
     def die_if_no_treasures
-      
+      if (@hiddenTreasures.empty? && @visibleTreasures.empty?)
+        @dead = true
+      end
     end
     
     def combat (m)
@@ -91,7 +99,10 @@ module NapakalakiGame
     end
     
     def valid_state
-      
+      if (@pendingBadConsequence.is_empty && !(@hiddenTreasures.size>4))
+          return true
+      end
+      return false
     end
     
     def init_treasures
@@ -109,12 +120,15 @@ module NapakalakiGame
     
     private 
     def can_you_give_me_a_treasure
-      
+      if (@hiddenTreasures.size>0)
+        return true
+      end
+      return false
     end
     
     private
     def have_stolen
-      
+      @canISteal=false
     end
     
     def discard_all_treasures
