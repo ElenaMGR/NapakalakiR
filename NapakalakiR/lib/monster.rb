@@ -18,7 +18,7 @@ module NapakalakiGame
       @prize = p    
     end
     
-    def getLevelGained
+    def getLevelsGained
       return prize.levels      
     end
     
