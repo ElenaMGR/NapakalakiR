@@ -141,12 +141,14 @@ module NapakalakiGame
       
     end
     
+    # Baraja el mazo de cartas de tesoros
     def shuffle_treasure
-      
+      @unusedTreasures.shuffle
     end
 
+    # Baraja el mazo de cartas de monstruos
     def shuffle_monster
-      
+      @unusedMonsters.shuffle
     end
     
     def next_treasure
@@ -157,12 +159,13 @@ module NapakalakiGame
       
     end
     
-    def give_treasure_back
-      
+    # Introduce en el mazo de descartes de tesoros el tesoro t
+    def give_treasure_back(t)
+      @usedTreasures << t
     end
     
-    def give_monster_back
-      
+    def give_monster_back(m)
+      @usedMonsters << m
     end
     
     def init_cards
