@@ -5,17 +5,22 @@
 
 module NapakalakiGame
   
-  attr_accesor :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
-  attr_writer :enemy
-  
-  @@MAXLEVEL = 10
-  
-  @pendingBadConsequence
-  
   class Player
-    def initialize
-
+    attr_accesor :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
+    attr_writer :enemy
+  
+    @@MAXLEVEL = 10
+  
+    @pendingBadConsequence
+     
+    def initialize (name)
+      @name = name
+      @dead = true
+      @canISteal = true
     end
+    
+    
+    
   end
 
 end
