@@ -69,6 +69,36 @@ module NapakalakiGame
       
     end
     
+    def combat (m)
+      
+    end
+    
+    def make_treasure_visible (t)
+      
+    end
+    
+    def discard_visible_treasure (t)
+      
+    end
+    
+    def discard_hidden_treasure (t)
+      
+    end
+    
+    def valid_state
+      
+    end
+    
+    def init_treasures
+      
+    end
+    
+    def steal_treasure
+      
+    end
+    
+    
+    
   end
 
 end
