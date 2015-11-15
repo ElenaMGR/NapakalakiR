@@ -152,6 +152,8 @@ module NapakalakiGame
   
 
     def prueba
+
+      
       #Creamos las cartas de los monstruos
       monsters = Array.new
       monsters = createMonster

@@ -23,6 +23,9 @@ module NapakalakiGame
       @name = name
       @dead = true
       @canISteal = true
+      @level = 0
+      @hiddenTreasures = Array.new
+      @visibleTreasures = Array.new
     end
     
     # Devuelve la vida al jugador, modificando el atributo correspondiente
@@ -117,6 +120,7 @@ module NapakalakiGame
     
     # Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
     # y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
+    public
     def valid_state
       if (@pendingBadConsequence.is_empty && !(@hiddenTreasures.size>4))
           return true
