@@ -14,7 +14,12 @@ module NapakalakiGame
   class Player
     attr_reader :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
     attr_writer :enemy
-  
+    
+    private_class_method :bring_to_life, :get_combat_level, :increment_levels, :decrement_levels
+    private_class_method :set_pending_bad_consequence, :apply_prize, :apply_bad_consequence
+    private_class_method :can_make_treasure_visible, :how_many_visible_treasures, :die_if_no_treasures
+    private_class_method :give_me_a_treasure, :can_you_give_me_a_treasure, :have_stolen
+    
     @@MAXLEVEL = 10
   
     @pendingBadConsequence
@@ -29,15 +34,13 @@ module NapakalakiGame
     end
     
     # Devuelve la vida al jugador, modificando el atributo correspondiente
-    private
     def bring_to_life
       @dead = false
     end
-    
+
     # Devuelve el nivel de combate del jugador. Que viene dado por
     # su nivel más los bonus que le proporcionan los tesoros que
     # tenga equipados
-    private 
     def get_combat_level
       combat_level=@level
       hiddenTreasures.each { |ht|
@@ -48,40 +51,33 @@ module NapakalakiGame
     end
     
     #Incrementa el nivel del jugador en i niveles
-    private
     def increment_levels (l)
       @level += l
     end
     
     # Decrementa el nivel del jugador en i niveles
-    private
     def decrement_levels (l)
       @level -= l
     end
     
     # Asigna el mal rollo al jugador
-    private
     def set_pending_bad_consequence (b)
       @pendingBadConsequence = b
     end
     
-    private
     def apply_prize (m)
       
     end
     
-    private 
     def apply_bad_consequence (m)
       
     end
     
-    private
     def can_make_treasure_visible (t)
       
     end
     
     #Devuelve el número de tesoros visibles de tipo tKind que tiene el jugador
-    private
     def how_many_visible_treasures (tKind)
       num=0
       @visibleTreasures.each { |v| 
@@ -94,7 +90,6 @@ module NapakalakiGame
     
     # Cambia el estado de jugador a muerto, modificando el correspondiente
     # atributo.
-    private
     def die_if_no_treasures
       if (@hiddenTreasures.empty? && @visibleTreasures.empty?)
         @dead = true
@@ -120,7 +115,6 @@ module NapakalakiGame
     
     # Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
     # y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
-    public
     def valid_state
       if (@pendingBadConsequence.is_empty && !(@hiddenTreasures.size>4))
           return true
@@ -136,14 +130,12 @@ module NapakalakiGame
       
     end
     
-    private 
     def give_me_a_treasure
       
     end
     
     # Devuelve true si el jugador tiene tesoros para ser robados
     # por otro jugador y false en caso contrario.
-    private 
     def can_you_give_me_a_treasure
       if (@hiddenTreasures.size>0)
         return true
@@ -153,7 +145,6 @@ module NapakalakiGame
     
     
     # Cambia el atributo canISteal a false cuando el jugador roba un tesoro
-    private
     def have_stolen
       @canISteal=false
     end

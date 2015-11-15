@@ -15,6 +15,8 @@ module NapakalakiGame
   class Napakalaki
     attr_reader :currentPlayer, :currentMonster 
     
+    private_class_method :init_players, :next_player, :next_turn_allowed, :set_enemies
+    
     include Singleton
     
     # Atributos
@@ -22,22 +24,18 @@ module NapakalakiGame
     @players = Array.new
     
     
-    private
     def init_players(name)
       
     end
     
-    private
     def next_player
       
     end
     
-    private
     def next_turn_allowed
 
     end
     
-    private
     def set_enemies
       
     end
@@ -69,7 +67,6 @@ module NapakalakiGame
     def end_of_game(result)
       
     end
-     
     
   end
 end
