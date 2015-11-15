@@ -13,10 +13,7 @@ module NapakalakiGame
     
     include Singleton
     
-    private_class_method :init_treasure_card_deck, :init_monster_card_deck, :shuffle_treasure, :shuffle_monster
-    
-    @unusedMonsters = Array.new
-    
+    @unusedMonsters = Array.new    
     @usedMonsters = Array.new
     @usedTreasures = Array.new
     @unusedTreasures = Array.new
@@ -54,9 +51,7 @@ module NapakalakiGame
         @unusedTreasures << Treasure.new("Shogulador",1,TreasureKind::BOTHHANDS)
         @unusedTreasures << Treasure.new("Varita de atizamiento",3,TreasureKind::ONEHAND)
         @unusedTreasures << Treasure.new("Tentáculo de pega",2,TreasureKind::HELMET)
-        @unusedTreasures << Treasure.new("Zapato deja-amigos",1,TreasureKind::SHOE)
-       
-      
+        @unusedTreasures << Treasure.new("Zapato deja-amigos",1,TreasureKind::SHOE)      
     end
     
     #Inicializa el mazo de cartas de monstruos.
@@ -177,7 +172,8 @@ module NapakalakiGame
       
     end  
     
-  
+  private :init_treasure_card_deck, :init_monster_card_deck, :shuffle_treasure, :shuffle_monster
+    
   end
 
 end

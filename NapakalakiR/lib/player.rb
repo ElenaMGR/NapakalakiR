@@ -14,12 +14,7 @@ module NapakalakiGame
   class Player
     attr_reader :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
     attr_writer :enemy
-    
-    private_class_method :bring_to_life, :get_combat_level, :increment_levels, :decrement_levels
-    private_class_method :set_pending_bad_consequence, :apply_prize, :apply_bad_consequence
-    private_class_method :can_make_treasure_visible, :how_many_visible_treasures, :die_if_no_treasures
-    private_class_method :give_me_a_treasure, :can_you_give_me_a_treasure, :have_stolen
-    
+  
     @@MAXLEVEL = 10
   
     @pendingBadConsequence
@@ -153,6 +148,11 @@ module NapakalakiGame
       
     end
     
+    
+    private :bring_to_life, :get_combat_level, :increment_levels, :decrement_levels
+    private :set_pending_bad_consequence, :apply_prize, :apply_bad_consequence
+    private :can_make_treasure_visible, :how_many_visible_treasures, :die_if_no_treasures
+    private :give_me_a_treasure, :can_you_give_me_a_treasure, :have_stolen
      
   end
 
