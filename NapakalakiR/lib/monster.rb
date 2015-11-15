@@ -2,6 +2,10 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
+
+require_relative 'prize'
+require_relative 'bad_consequence'
+
 module NapakalakiGame
   
 
@@ -20,12 +24,12 @@ module NapakalakiGame
     
     # Devuelve el número de niveles ganados proporcionados por su buen rollo
     def get_levels_gained
-      return prize.levels      
+      return @prize.levels      
     end
     
     # Devuelve el número de tesoros ganados proporcionados por su buen rollo
     def get_treasure_gained
-      return prize.treasures      
+      return @prize.treasures      
     end
     
     def to_s
