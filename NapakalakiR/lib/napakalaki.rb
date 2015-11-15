@@ -24,13 +24,11 @@ module NapakalakiGame
     private
     def next_player
       
-      return Player;
     end
     
     private
     def next_turn_allowed
-      
-      return false;
+
     end
     
     private
@@ -59,11 +57,11 @@ module NapakalakiGame
     end
     
     def next_turn
-      return false;
+      
     end
     
     def end_of_game(result)
-      return false;
+      
     end
      
     
