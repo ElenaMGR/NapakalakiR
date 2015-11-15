@@ -18,7 +18,9 @@ module NapakalakiGame
     @usedTreasures = Array.new
     @unusedTreasures = Array.new
     
+    
     # Inicializa el mazo de cartas de Tesoros.
+    private
     def init_treasure_card_deck
         @unusedTreasures << Treasure.new("¡Sí mi amo!",4,TreasureKind::HELMET)
         @unusedTreasures << Treasure.new("Botas de investigación",3,TreasureKind::SHOE)
@@ -56,6 +58,7 @@ module NapakalakiGame
     end
     
     #Inicializa el mazo de cartas de monstruos.
+    private
     def init_monster_card_deck
       prize = Prize.new(2,1)
       badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes tu armadura visible y otra oculta', 0,[TreasureKind::ARMOR],[TreasureKind::ARMOR])
@@ -142,11 +145,13 @@ module NapakalakiGame
     end
     
     # Baraja el mazo de cartas de tesoros
+    private
     def shuffle_treasure
       @unusedTreasures.shuffle
     end
 
     # Baraja el mazo de cartas de monstruos
+    private
     def shuffle_monster
       @unusedMonsters.shuffle
     end
