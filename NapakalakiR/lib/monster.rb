@@ -18,10 +18,12 @@ module NapakalakiGame
       @prize = p    
     end
     
+    # Devuelve el número de niveles ganados proporcionados por su buen rollo
     def get_levels_gained
       return prize.levels      
     end
     
+    # Devuelve el número de tesoros ganados proporcionados por su buen rollo
     def get_treasure_gained
       return prize.treasures      
     end
