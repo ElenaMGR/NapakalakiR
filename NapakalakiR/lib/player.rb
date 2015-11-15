@@ -6,7 +6,7 @@
 module NapakalakiGame
   
   class Player
-    attr_accesor :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
+    attr_reader :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
     attr_writer :enemy
   
     @@MAXLEVEL = 10
