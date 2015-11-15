@@ -18,11 +18,11 @@ module NapakalakiGame
       @prize = p    
     end
     
-    def getLevelsGained
+    def get_levels_gained
       return prize.levels      
     end
     
-    def getTreasureGained
+    def get_treasure_gained
       return prize.treasures      
     end
     
