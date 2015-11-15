@@ -21,27 +21,32 @@ module NapakalakiGame
     
     private
     def bring_to_life
-      
+      @dead = false
     end
     
     private 
     def get_combat_level
-      
+      combat_level=@level
+      hiddenTreasures.each { |ht|
+        combat_level += ht.bonus
+      }
+      return combat_level
+ 
     end
     
     private
     def increment_levels (l)
-      
+      @level += l
     end
     
     private
     def decrement_levels (l)
-      
+      @level -= l
     end
     
     private
     def set_pending_bad_consequence (b)
-      
+      @pendingBadConsequence = b
     end
     
     private
