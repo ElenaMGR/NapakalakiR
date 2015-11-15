@@ -45,10 +45,12 @@ module NapakalakiGame
 
     end
 
-
+    # Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
+    # vacío, eso significa que el conjunto de atributos del mal rollo indica 
+    # que no se pierden tesoros
     def is_empty
       vacio = false;
-      if( !@death && @levels == 0 && @nVisibleTreasures == 0 && @nHiddenTreasures == 0 && @specificHiddenTreasures.empty? && specificVisibleTreasures.empty?)
+      if( !@death && @levels == 0 && @nVisibleTreasures == 0 && @nHiddenTreasures == 0 && @specificHiddenTreasures.empty? && @specificVisibleTreasures.empty?)
         vacio=true;
       end
       return vacio;
