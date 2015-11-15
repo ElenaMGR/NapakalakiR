@@ -135,7 +135,7 @@ module NapakalakiGame
     def bcLostSpecificTreasure(m)
       resultado = Array.new
       m.each { |mo| 
-        if(!mo.bc.someSpecificHiddenTreasures.empty? || !mo.bc.someSpecificVisibleTreasures.empty? )
+        if(!mo.badConsequence.specificHiddenTreasures.empty? || !mo.badConsequence.specificVisibleTreasures.empty? )
           resultado<<mo
         end
         }
@@ -164,7 +164,7 @@ module NapakalakiGame
 #      puts "\n\nMonstuos que tienen un mal rollo que solo implica pérdida de niveles"
 #      res.each { |m|puts m.to_s}
 #
-#
+
       res = priceWinLvlG1(monsters)
 
       puts "\n\nMonstuos que tienen un buen rollo que implica una ganancia de niveles superior a 1"
