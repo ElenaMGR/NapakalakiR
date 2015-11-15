@@ -2,6 +2,12 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
+require_relative 'player'
+require_relative 'combat_result'
+require_relative 'treasure'
+require_relative 'monster'
+require_relative 'card_dealer'
+
 require 'singleton'
 
 module NapakalakiGame
