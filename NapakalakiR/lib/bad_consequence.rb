@@ -47,7 +47,10 @@ module NapakalakiGame
 
 
     def is_empty
-
+     # if(!death && levels == 0 && nVisibleTreasures==0 && nHiddenTreasures == 0 && specificHiddenTreasures && specificVisibleTreasures ){
+            vacio=true;
+      #  }
+      
     end
 
 
