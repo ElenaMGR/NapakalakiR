@@ -19,11 +19,15 @@ module NapakalakiGame
       @canISteal = true
     end
     
+    # Devuelve la vida al jugador, modificando el atributo correspondiente
     private
     def bring_to_life
       @dead = false
     end
     
+    # Devuelve el nivel de combate del jugador. Que viene dado por
+    # su nivel más los bonus que le proporcionan los tesoros que
+    # tenga equipados
     private 
     def get_combat_level
       combat_level=@level
@@ -34,16 +38,19 @@ module NapakalakiGame
  
     end
     
+    #Incrementa el nivel del jugador en i niveles
     private
     def increment_levels (l)
       @level += l
     end
     
+    # Decrementa el nivel del jugador en i niveles
     private
     def decrement_levels (l)
       @level -= l
     end
     
+    # Asigna el mal rollo al jugador
     private
     def set_pending_bad_consequence (b)
       @pendingBadConsequence = b
@@ -64,6 +71,7 @@ module NapakalakiGame
       
     end
     
+    #Devuelve el número de tesoros visibles de tipo tKind que tiene el jugador
     private
     def how_many_visible_treasures (tKind)
       num=0
@@ -75,6 +83,8 @@ module NapakalakiGame
       return num
     end
     
+    # Cambia el estado de jugador a muerto, modificando el correspondiente
+    # atributo.
     private
     def die_if_no_treasures
       if (@hiddenTreasures.empty? && @visibleTreasures.empty?)
@@ -98,6 +108,9 @@ module NapakalakiGame
       
     end
     
+    
+    # Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
+    # y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
     def valid_state
       if (@pendingBadConsequence.is_empty && !(@hiddenTreasures.size>4))
           return true
@@ -118,6 +131,8 @@ module NapakalakiGame
       
     end
     
+    # Devuelve true si el jugador tiene tesoros para ser robados
+    # por otro jugador y false en caso contrario.
     private 
     def can_you_give_me_a_treasure
       if (@hiddenTreasures.size>0)
@@ -126,6 +141,8 @@ module NapakalakiGame
       return false
     end
     
+    
+    # Cambia el atributo canISteal a false cuando el jugador roba un tesoro
     private
     def have_stolen
       @canISteal=false
