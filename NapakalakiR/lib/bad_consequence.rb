@@ -30,38 +30,38 @@ module NapakalakiGame
       @death=death    
     end
 
-    def self.newLevelNumberOfTreasures (t, l, nVisible, nHidden)
+    def self.new_level_number_of_treasures (t, l, nVisible, nHidden)
       new(t, l, nVisible,nHidden,Array.new,Array.new,false)
     end
 
-    def self.newLevelSpecificTreasures (t, l, v, h)
+    def self.new_level_specific_treasures (t, l, v, h)
 
       new(t,l,0,0,v,h,false)
 
     end
 
-    def self.newDeath (t)
+    def self.new_death (t)
        new(t,0,0,0,Array.new,Array.new,true)
 
     end
 
 
-    def isEmpty
+    def is_empty
 
     end
 
 
-    def substractVisibleTreasure (t)
+    def substract_visible_treasure (t)
 
     end
 
 
-    def substractHiddenTreasure (t)
+    def substract_hidden_treasure (t)
 
     end
 
 
-    def adjustToFitTreasureLists (v,h)
+    def adjust_to_fit_treasure_lists (v,h)
 
     end
 
