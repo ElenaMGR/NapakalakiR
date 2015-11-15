@@ -46,7 +46,7 @@ module NapakalakiGame
     end
 
 
-    def isEmpty ()
+    def isEmpty
 
     end
 
