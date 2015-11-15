@@ -13,12 +13,12 @@ module NapakalakiGame
     # Constructor
     def initialize( t, l)
       @treasures = t
-      @level = l
+      @levels = l
     end
     
     
     def to_s
-      "Buen rollo: \n Tesoros ganados: #{@treasures}, Niveles ganados: #{@level}"
+      "Buen rollo: \n Tesoros ganados: #{@treasures}, Niveles ganados: #{@levels}"
     end
 
   end
