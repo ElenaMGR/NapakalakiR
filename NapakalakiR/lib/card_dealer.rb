@@ -169,6 +169,7 @@ module NapakalakiGame
       @usedTreasures << t
     end
     
+    # Introduce en el mazo de descartes de monstruos el tesoro m
     def give_monster_back(m)
       @usedMonsters << m
     end
