@@ -97,8 +97,26 @@ module NapakalakiGame
       
     end
     
+    private 
+    def give_me_a_treasure
+      
+    end
     
+    private 
+    def can_you_give_me_a_treasure
+      
+    end
     
+    private
+    def have_stolen
+      
+    end
+    
+    def discard_all_treasures
+      
+    end
+    
+     
   end
 
 end
