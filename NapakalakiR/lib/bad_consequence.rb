@@ -30,6 +30,11 @@ module NapakalakiGame
       @death=death    
     end
 
+    # Metodo de clase que accede a la variabla MAXTREASURES
+    def self.max_treasures
+      @@MAXTREASURES
+    end
+    
     def self.new_level_number_of_treasures (t, l, nVisible, nHidden)
       new(t, l, nVisible,nHidden,Array.new,Array.new,false)
     end

@@ -78,7 +78,7 @@ module NapakalakiGame
       @unusedMonsters << Monster.new('Angeles de la noche ibicenca', 14, badConsequence, prize)
 
       prize = Prize.new(3,1)
-      badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes todos tus tesoros visibles',0 , BadConsequence.MAXTREASURES, 0)
+      badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes todos tus tesoros visibles',0 , BadConsequence.max_treasures, 0)
       @unusedMonsters << Monster.new('El gorron en el umbral',10,badConsequence, prize)
 
       prize = Prize.new(2,1)
