@@ -7,34 +7,33 @@ require 'singleton'
 module NapakalakiGame
   
   class Napakalaki
-    attr_reader :currentPlayer
+    attr_reader :currentPlayer, :currentMonster 
     
     include Singleton
     
-    # Atributos de instancia
-    @currentMonster 
+    # Atributos
     @dealer = CardDealer.instance
-    
-    @currentPlayer 
     @players = Array.new
     
     
-    
-    
+    private
     def init_players(name)
       
     end
     
+    private
     def next_player
       
       return Player;
     end
     
+    private
     def next_turn_allowed
       
       return false;
     end
     
+    private
     def set_enemies
       
     end
