@@ -19,6 +19,35 @@ module NapakalakiGame
       @canISteal = true
     end
     
+    private
+    def bring_to_life
+      
+    end
+    
+    private 
+    def get_combat_level
+      
+    end
+    
+    private
+    def increment_levels (l)
+      
+    end
+    
+    private
+    def decrement_levels (l)
+      
+    end
+    
+    private
+    def set_pending_bad_consequence (b)
+      
+    end
+    
+    private
+    def apply_prize (m)
+      
+    end
     
     
   end
