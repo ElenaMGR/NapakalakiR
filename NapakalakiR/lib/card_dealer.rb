@@ -76,11 +76,11 @@ module NapakalakiGame
 
       prize = Prize.new(4,1)
       badConsequence = BadConsequence.newLevelSpecificTreasures('Te atrapan para llevarte de fiesta y te dejan caer en mitad del vuelo. Descarta 1 mano visible y 1 mano oculta', 0,[TreasureKind::ONEHAND],[TreasureKind::ONEHAND])
-      @unusedMonsters << Monster.new('Angeles de la noche ibicenca', 14, badConsequence, prize)
+      @unusedMonsters << Monster.new('Ángeles de la noche ibicenca', 14, badConsequence, prize)
 
       prize = Prize.new(3,1)
       badConsequence = BadConsequence.newLevelNumberOfTreasures('Pierdes todos tus tesoros visibles',0 , BadConsequence.max_treasures, 0)
-      @unusedMonsters << Monster.new('El gorron en el umbral',10,badConsequence, prize)
+      @unusedMonsters << Monster.new('El gorrón en el umbral',10,badConsequence, prize)
 
       prize = Prize.new(2,1)
       badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes la armadura visible', 0,[TreasureKind::ARMOR],Array.new)
@@ -112,7 +112,7 @@ module NapakalakiGame
 
       prize = Prize.new(1,1)
       badConsequence = BadConsequence.newLevelNumberOfTreasures('Da mucho asquito. Pierdes 3 niveles.',3 , 0, 0)
-      @unusedMonsters << Monster.new('Pollipolipo volante',3,badConsequence, prize)
+      @unusedMonsters << Monster.new('Pollipólipo volante',3,badConsequence, prize)
 
       prize = Prize.new(3,1)
       badConsequence = BadConsequence.newDeath("No le hace gracia que pronuncien mal su nombre. Estas muerto")
@@ -140,7 +140,7 @@ module NapakalakiGame
       visible << TreasureKind::ONEHAND
       visible << TreasureKind::ONEHAND
       badConsequence = BadConsequence.newLevelSpecificTreasures("Te faltan manos para tanta cabeza. Pierdes 3 niveles y tus tesoros visibles de las manos", 3, visible, Array.new)
-      @unusedMonsters << Monster.new("Bicefalo",20,badConsequence, prize)
+      @unusedMonsters << Monster.new("Bicéfalo",20,badConsequence, prize)
 
       
     end
