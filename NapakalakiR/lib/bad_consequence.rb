@@ -18,7 +18,7 @@ module NapakalakiGame
     attr_reader :death
     private_class_method :new
 
-    public @@MAXTREASURES = 10
+    @@MAXTREASURES = 10
 
     def initialize(t, l, nVisible, nHidden, v, h, death)
       @text=t
