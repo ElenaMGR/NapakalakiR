@@ -12,7 +12,7 @@ module NapakalakiGame
     
     # Genera un número aleatorio entre 1 y 6 
     def next_number
-      return 1 + rand(6)
+      return rand(1..6)
     end
     
     
