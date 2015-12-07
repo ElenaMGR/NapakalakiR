@@ -50,9 +50,16 @@ module NapakalakiGame
       return @players[nex]
  
     end
-    
-    def next_turn_allowed
 
+    # Comprueba si el jugador activo cumple con las reglas del juego
+    # para poder terminar su turno.
+    # Devuelve false si el jugador activo no puede pasar de turno y 
+    # true en caso contrario. Si currentPlayer es null, devuelve true
+    def next_turn_allowed
+      if(@currentPlayer == nill)
+            return true;
+      end
+        return @currentPlayer.valid_state
     end
     
     def set_enemies
