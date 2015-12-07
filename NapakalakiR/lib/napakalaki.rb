@@ -22,8 +22,13 @@ module NapakalakiGame
     @players = Array.new
     
     
+    # Inicializa el array de jugadores, creando tantos jugadores como
+    # elementos hay en names
     def init_players(name)
-      
+      name.each { |n| 
+        p = Player.new(n)
+        @players<<p
+      }
     end
     
     def next_player
