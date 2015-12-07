@@ -31,8 +31,24 @@ module NapakalakiGame
       }
     end
     
+    # Decide qué jugador es el siguiente en jugar
     def next_player
+      if (@currentPlayer.name=="") # Si es la primera jugada
+        nex = rand(0...@players.length)
+      else
+        nex = 0 
+        for i in 0..@players.length
+          
+          if (@players[i].name==@currentPlayer.name)
+            nex = (i + 1) % (@players.length)
+          end
+          
+        end
       
+      end
+      
+      return @players[nex]
+ 
     end
     
     def next_turn_allowed
