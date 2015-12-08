@@ -7,6 +7,7 @@ require_relative 'combat_result'
 require_relative 'treasure'
 require_relative 'monster'
 require_relative 'card_dealer'
+require_relative 'combat_result'
 
 require 'singleton'
 
@@ -90,8 +91,10 @@ module NapakalakiGame
       
     end
     
+    
+    # Devuelve true si el parametro resutl es WINGAME, en caso contrario devuelve false
     def end_of_game(result)
-      
+      return (result == CombatResult::WINGAME);
     end
     
     private :init_players, :next_player, :next_turn_allowed, :set_enemies
