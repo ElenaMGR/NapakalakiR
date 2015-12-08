@@ -64,6 +64,19 @@ module NapakalakiGame
     end
     
     def set_enemies
+      asignado = false
+      
+      for i in 0..@players.length
+        while(!asignado)
+          pos_enemy = rand(0...@players.length)
+          if( i != pos_enemy)
+            players[i].setEnemy(players[pos_enemy])
+            asignado = true
+          end
+          
+        end
+        asignado = false
+      end
       
     end
     
