@@ -63,14 +63,19 @@ module NapakalakiGame
         return @currentPlayer.valid_state
     end
     
+    
+    # Se asigna un enemigo a cada jugador. Esta asignación se hace de forma aleatoria teniendo
+    # en cuenta que un jugador no puede ser enemigo de sí mismo
     def set_enemies
+      # Variable para saber si ya está asignado
       asignado = false
       
-      for i in 0..@players.length
+      for i in 0..@players.length-1
         while(!asignado)
+          # Numero del enemigo
           pos_enemy = rand(0...@players.length)
           if( i != pos_enemy)
-            players[i].setEnemy(players[pos_enemy])
+            @players[i].emeny(@players[pos_enemy])
             asignado = true
           end
           
