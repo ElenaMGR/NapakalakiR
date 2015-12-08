@@ -95,8 +95,59 @@ module NapakalakiGame
       
     end
     
-    def make_treasure_visible (t)
+    
+    # Comprueba si el tesoro t se puede pasar de oculto a visible
+    def can_make_treasure_visible (t)
+      sePuede = true
+      # Solo podrá tener equipado un tesoro de cada tipo, 
+      # salvo para el caso de tesoros de una mano de los
+      # que podrá tener equipados hasta 2.
+      oneHand=0
+      bothhands=false
+      i=0
+      while (i < @visibleTreasures.size()  && sePuede)
+        if (t.getType()!= TreasureKind::ONEHAND)
+          # Si ya lo tiene equipado no se puede equipar
+          if (t.getType()==@visibleTreasures.at(i).get_type())
+            sePuede=false;     
+          end
+          if (@visibleTreasures.at(i).get_type()==TreasureKind::ONEHAND)
+            oneHand+=1;
+          end
+        else
+          # Cuento cuantas armas de una mano tiene equipadas
+          if (t.getType()==@visibleTreasures.at(i).get_type())
+            oneHand+=1;
+          end
+        end
+        # Compruebo si tiene equipado un arma de dos manos     
+        if (@visibleTreasures.at(i).get_type()==TreasureKind::BOTHHANDS)
+          bothhands=true;
+        end
+             
+        i+=1
+      end
       
+      if(sePuede)
+        # Si se tienen equipado 1 ó 2 tesoros de una mano, no se podrá 
+        # tener equipado ningún tesoro de dos manos. 
+        if (oneHand>0 && (t.getType()== TreasureKind.BOTHHANDS))
+          sePuede=false;
+
+        # Si se tiene equipado un tesoro de dos manos, no se podrá tener 
+        # equipado ningún tesoro de una mano.
+        # Si el tipo es ONEHAND y ya tiene dos equipadas, no se puede
+                        
+        else 
+          if(t.getType() == TreasureKind.ONEHAND)
+            if(oneHand==2 || bothhands)
+              sePuede=false;
+            end
+          end
+        end
+      end
+      
+      return sePuede
     end
     
     def discard_visible_treasure (t)
