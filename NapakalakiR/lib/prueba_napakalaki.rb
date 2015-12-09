@@ -131,7 +131,7 @@ module NapakalakiGame
     def priceWinLvlG1(m)
       resultado = Array.new
       m.each { |mo| 
-        if(mo.get_levels_gained>1)
+        if(mo.getLevelsGained>1)
           resultado<<mo
         end
         }

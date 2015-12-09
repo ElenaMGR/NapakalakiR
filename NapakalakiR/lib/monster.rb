@@ -22,13 +22,27 @@ module NapakalakiGame
       @prize = p    
     end
     
+    # Métodos get
+    def getName
+        return @name;
+    end
+
+    def getCombatLevel
+        return @combatLevel;
+    end
+    
+    def getBadConsequence
+        return @badConsequence;
+    end
+    
+    
     # Devuelve el número de niveles ganados proporcionados por su buen rollo
-    def get_levels_gained
+    def getLevelsGained
       return @prize.levels      
     end
     
     # Devuelve el número de tesoros ganados proporcionados por su buen rollo
-    def get_treasure_gained
+    def getTreasuresGained
       return @prize.treasures      
     end
     
