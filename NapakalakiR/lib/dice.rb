@@ -11,7 +11,7 @@ module NapakalakiGame
     include Singleton
     
     # Genera un número aleatorio entre 1 y 6 
-    def next_number
+    def nextNumber
       return rand(1..6)
     end
     
