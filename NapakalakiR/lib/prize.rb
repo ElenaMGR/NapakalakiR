@@ -16,6 +16,15 @@ module NapakalakiGame
       @levels = l
     end
     
+    # Métodos get
+    def getTreasures
+        return @treasures;
+    end
+    
+    def getLevels
+        return @levels;
+    end
+    
     
     def to_s
       "Buen rollo: \n Tesoros ganados: #{@treasures}, Niveles ganados: #{@levels}"
