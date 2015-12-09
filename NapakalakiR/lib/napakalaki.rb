@@ -70,7 +70,7 @@ module NapakalakiGame
       if(@currentPlayer == nill)
             return true;
       end
-        return @currentPlayer.valid_state
+        return @currentPlayer.validState
     end
     
     

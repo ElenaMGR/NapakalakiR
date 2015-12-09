@@ -28,17 +28,50 @@ module NapakalakiGame
       @visibleTreasures = Array.new
     end
     
+    def getName
+        return @name;
+    end
+    
+    #Cambia el atributo canISteal a false cuando el jugador roba un tesoro. 
+    def haveStolen
+        @canISteal= false;
+    end
+    
+    def canISteal
+        return @canISteal;
+    end
+    
+    def setEnemy(enemy)
+        @enemy=enemy;
+    end
+    
+    def getLevels
+        return @level;
+    end
+    
+    def isDead  
+        return @dead;
+    end
+    
+    def getHiddenTreasures
+        return @hiddenTreasures;
+    end
+    
+    def getVisibleTreasures
+        return @visibleTreasures;
+    end
+    
     # Devuelve la vida al jugador, modificando el atributo correspondiente
-    def bring_to_life
+    def bringToLife
       @dead = false
     end
 
     # Devuelve el nivel de combate del jugador. Que viene dado por
     # su nivel más los bonus que le proporcionan los tesoros que
     # tenga equipados
-    def get_combat_level
+    def getCombatLevel
       combat_level=@level
-      hiddenTreasures.each { |ht|
+      @hiddenTreasures.each { |ht|
         combat_level += ht.bonus
       }
       return combat_level
@@ -46,34 +79,34 @@ module NapakalakiGame
     end
     
     #Incrementa el nivel del jugador en i niveles
-    def increment_levels (l)
+    def incrementLevels (l)
       @level += l
     end
     
     # Decrementa el nivel del jugador en i niveles
-    def decrement_levels (l)
+    def decrementLevels (l)
       @level -= l
     end
     
     # Asigna el mal rollo al jugador
-    def set_pending_bad_consequence (b)
+    def setPendingBadConsequence (b)
       @pendingBadConsequence = b
     end
     
-    def apply_prize (m)
+    def applyPrize (m)
       
     end
     
-    def apply_bad_consequence (m)
+    def applyBadConsequence (m)
       
     end
     
-    def can_make_treasure_visible (t)
+    def canMakeTreasureVisible (t)
       
     end
     
     #Devuelve el número de tesoros visibles de tipo tKind que tiene el jugador
-    def how_many_visible_treasures (tKind)
+    def howManyVisibleTreasures (tKind)
       num=0
       @visibleTreasures.each { |v| 
         if (v.type==tKind)
@@ -85,7 +118,7 @@ module NapakalakiGame
     
     # Cambia el estado de jugador a muerto, modificando el correspondiente
     # atributo.
-    def die_if_no_treasures
+    def dieIfNoTreasures
       if (@hiddenTreasures.empty? && @visibleTreasures.empty?)
         @dead = true
       end
@@ -97,7 +130,7 @@ module NapakalakiGame
     
     
     # Comprueba si el tesoro t se puede pasar de oculto a visible
-    def can_make_treasure_visible (t)
+    def makeTreasureVisible (t)
       sePuede = true
       # Solo podrá tener equipado un tesoro de cada tipo, 
       # salvo para el caso de tesoros de una mano de los
@@ -150,34 +183,34 @@ module NapakalakiGame
       return sePuede
     end
     
-    def discard_visible_treasure (t)
+    def discardVisibleTreasure (t)
       
     end
     
-    def discard_hidden_treasure (t)
+    def discardHiddenTreasure (t)
       
     end
     
     
     # Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
     # y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
-    def valid_state
+    def validState
       if (@pendingBadConsequence.isEmpty && !(@hiddenTreasures.size>4))
           return true
       end
       return false
     end
     
-    def init_treasures
+    def initTreasures
       
     end
     
-    def steal_treasure
+    def stealTreasure
       
     end
     
     # Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
-    def give_me_a_treasure
+    def giveMeATreasure
       tesoro = Treasure.new
       #Genero un número aletorio
       num = rand(0...@hiddenTreasures.length)
@@ -190,7 +223,7 @@ module NapakalakiGame
     
     # Devuelve true si el jugador tiene tesoros para ser robados
     # por otro jugador y false en caso contrario.
-    def can_you_give_me_a_treasure
+    def canYouGiveMeATreasure
       if (@hiddenTreasures.size>0)
         return true
       end
@@ -199,19 +232,19 @@ module NapakalakiGame
     
     
     # Cambia el atributo canISteal a false cuando el jugador roba un tesoro
-    def have_stolen
+    def haveStolen
       @canISteal=false
     end
     
-    def discard_all_treasures
+    def discardAllTreasures
       
     end
     
     
-    private :bring_to_life, :get_combat_level, :increment_levels, :decrement_levels
-    private :set_pending_bad_consequence, :apply_prize, :apply_bad_consequence
-    private :can_make_treasure_visible, :how_many_visible_treasures, :die_if_no_treasures
-    private :give_me_a_treasure, :can_you_give_me_a_treasure, :have_stolen
+    private :bringToLife, :getCombatLevel, :incrementLevels, :decrementLevels
+    private :setPendingBadConsequence, :applyPrize, :applyBadConsequence
+    private :canMakeTreasureVisible, :howManyVisibleTreasures, :dieIfNoTreasures
+    private :giveMeATreasure, :canYouGiveMeATreasure, :haveStolen
      
   end
 
