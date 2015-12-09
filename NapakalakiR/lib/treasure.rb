@@ -16,6 +16,21 @@ module NapakalakiGame
       @bonus = bonus
       @type = t
     end
+    
+    def getName
+        return @name;
+    end
+    
+    # Devuelve bonus de Treasure
+    def getBonus
+        return @bonus;
+    end
+    
+    
+    # Devuelve type de Treasure
+    def getType
+        return @type;
+    end
 
   end
 
