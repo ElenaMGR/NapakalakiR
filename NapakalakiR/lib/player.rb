@@ -176,8 +176,16 @@ module NapakalakiGame
       
     end
     
+    # Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
     def give_me_a_treasure
-      
+      tesoro = Treasure.new
+      #Genero un número aletorio
+      num = rand(0...@hiddenTreasures.length)
+      # Elijo el tesoro a devolver
+      tesoro = @hiddenTreasures.at(num);
+      #Elimino el tesoro
+      @hiddenTreasures.remove(num);
+      return tesoro;
     end
     
     # Devuelve true si el jugador tiene tesoros para ser robados
