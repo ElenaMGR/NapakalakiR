@@ -22,10 +22,20 @@ module NapakalakiGame
     @dealer = CardDealer.instance
     @players = Array.new
     
+    def getCurrentPlayer      
+        return @currentPlayer;
+    end
+    
+    # Devuelve el mostrue en juego
+    def getCurrentMonster
+      return @currentMonster;
+    end
+   
+    
     
     # Inicializa el array de jugadores, creando tantos jugadores como
     # elementos hay en names
-    def init_players(name)
+    def initPlayers(name)
       name.each { |n| 
         p = Player.new(n)
         @players<<p
@@ -33,7 +43,7 @@ module NapakalakiGame
     end
     
     # Decide qué jugador es el siguiente en jugar
-    def next_player
+    def nextPlayer
       if (@currentPlayer.name=="") # Si es la primera jugada
         nex = rand(0...@players.length)
       else
@@ -56,7 +66,7 @@ module NapakalakiGame
     # para poder terminar su turno.
     # Devuelve false si el jugador activo no puede pasar de turno y 
     # true en caso contrario. Si currentPlayer es null, devuelve true
-    def next_turn_allowed
+    def nextTurnAllowed
       if(@currentPlayer == nill)
             return true;
       end
@@ -66,7 +76,7 @@ module NapakalakiGame
     
     # Se asigna un enemigo a cada jugador. Esta asignación se hace de forma aleatoria teniendo
     # en cuenta que un jugador no puede ser enemigo de sí mismo
-    def set_enemies
+    def setEnemies
       # Variable para saber si ya está asignado
       asignado = false
       
@@ -85,37 +95,37 @@ module NapakalakiGame
       
     end
     
-    def develop_combat
+    def developCombat
       
     end
     
-    def discard_visible_treasures(treasures)
+    def discardVisibleTreasures(treasures)
       
     end
     
-    def discard_hidden_treasures(treasures)
+    def discardHiddenTreasures(treasures)
       
     end
     
-    def make_treasures_visible(treasures)
+    def makeTreasuresVisible(treasures)
       
     end
     
-    def init_game(players)
+    def initGame(players)
       
     end
     
-    def next_turn
+    def nextTurn
       
     end
     
     
     # Devuelve true si el parametro resutl es WINGAME, en caso contrario devuelve false
-    def end_of_game(result)
+    def endOfGame(result)
       return (result == CombatResult::WINGAME);
     end
     
-    private :init_players, :next_player, :next_turn_allowed, :set_enemies
+    private :initPlayers, :nextPlayer, :nextTurnAllowed, :setEnemies
     
   end
 end
