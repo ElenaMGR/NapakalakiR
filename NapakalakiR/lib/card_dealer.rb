@@ -20,7 +20,7 @@ module NapakalakiGame
     
     
     # Inicializa el mazo de cartas de Tesoros.
-    def init_treasure_card_deck
+    def initTreasureCardDeck
         @unusedTreasures << Treasure.new("¡Sí mi amo!",4,TreasureKind::HELMET)
         @unusedTreasures << Treasure.new("Botas de investigación",3,TreasureKind::SHOE)
         @unusedTreasures << Treasure.new("Capucha de Cthulhu",3,TreasureKind::HELMET)   
@@ -55,7 +55,7 @@ module NapakalakiGame
     end
     
     #Inicializa el mazo de cartas de monstruos.
-    def init_monster_card_deck
+    def initMonsterCardDeck
       prize = Prize.new(2,1)
       badConsequence = BadConsequence.newLevelSpecificTreasures('Pierdes tu armadura visible y otra oculta', 0,[TreasureKind::ARMOR],[TreasureKind::ARMOR])
       @unusedMonsters << Monster.new('3 Byakhees de bonanza', 8, badConsequence, prize)
@@ -141,38 +141,38 @@ module NapakalakiGame
     end
     
     # Baraja el mazo de cartas de tesoros
-    def shuffle_treasure
+    def shuffleTreasures
       @unusedTreasures.shuffle
     end
 
     # Baraja el mazo de cartas de monstruos
-    def shuffle_monster
+    def shuffleMonster
       @unusedMonsters.shuffle
     end
     
-    def next_treasure
+    def nextTreasure
       
     end
     
-    def next_monster
+    def nextMonster
       
     end
     
     # Introduce en el mazo de descartes de tesoros el tesoro t
-    def give_treasure_back(t)
+    def giveTreasureBack(t)
       @usedTreasures << t
     end
     
     # Introduce en el mazo de descartes de monstruos el tesoro m
-    def give_monster_back(m)
+    def giveMonsterBack(m)
       @usedMonsters << m
     end
     
-    def init_cards
+    def initCards
       
     end  
     
-  private :init_treasure_card_deck, :init_monster_card_deck, :shuffle_treasure, :shuffle_monster
+  private :initTreasureCardDeck, :initMonsterCardDeck, :shuffleTreasures, :shuffleMonster
     
   end
 
