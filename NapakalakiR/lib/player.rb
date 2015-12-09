@@ -162,7 +162,7 @@ module NapakalakiGame
     # Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
     # y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
     def valid_state
-      if (@pendingBadConsequence.is_empty && !(@hiddenTreasures.size>4))
+      if (@pendingBadConsequence.isEmpty && !(@hiddenTreasures.size>4))
           return true
       end
       return false

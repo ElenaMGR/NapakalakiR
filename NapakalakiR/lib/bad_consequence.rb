@@ -36,25 +36,47 @@ module NapakalakiGame
       @@MAXTREASURES
     end
     
-    def self.new_level_number_of_treasures (t, l, nVisible, nHidden)
+    def self.newLevelNumberOfTreasures(t, l, nVisible, nHidden)
       new(t, l, nVisible,nHidden,Array.new,Array.new,false)
     end
 
-    def self.new_level_specific_treasures (t, l, v, h)
+    def self.newLevelSpecificTreasures(t, l, v, h)
 
       new(t,l,0,0,v,h,false)
 
     end
 
-    def self.new_death (t)
+    def self.newDeath (t)
        new(t,0,0,0,Array.new,Array.new,true)
 
     end
+    
+    # Métodos Get
+    def getText
+        return @text;
+    end
 
+    def getLevels
+        return @levels;
+    end
+
+    def getNVisibleTreasures
+        return @nVisibleTreasures;
+    end
+
+    def getNHiddenTreasures
+        return @nHiddenTreasures;
+    end
+
+    def isDeath
+        return @death;
+    end
+    
+    
     # Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
     # vacío, eso significa que el conjunto de atributos del mal rollo indica 
     # que no se pierden tesoros
-    def is_empty
+    def isEmpty
       vacio = false;
       if( !@death && @levels == 0 && @nVisibleTreasures == 0 && @nHiddenTreasures == 0 && @specificHiddenTreasures.empty? && @specificVisibleTreasures.empty?)
         vacio=true;
@@ -63,17 +85,17 @@ module NapakalakiGame
     end
 
 
-    def substract_visible_treasure (t)
+    def substracVisibleTreasure (t)
 
     end
 
 
-    def substract_hidden_treasure (t)
+    def substracHiddenTreasure (t)
 
     end
 
 
-    def adjust_to_fit_treasure_lists (v,h)
+    def adjustToFitTreasureList (v,h)
 
     end
 
