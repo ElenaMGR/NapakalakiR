@@ -195,8 +195,14 @@ module NapakalakiGame
       @usedMonsters << m
     end
     
+    
+    # Inicializa los mazos
     def initCards
-      
+      initTreasureCardDeck
+      initMonsterCardDeck
+      # Barajamos los mazos de cartas
+      shuffleMonster
+      shuffleTreasures
     end  
     
   private :initTreasureCardDeck, :initMonsterCardDeck, :shuffleTreasures, :shuffleMonster
