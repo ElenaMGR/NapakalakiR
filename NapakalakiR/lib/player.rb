@@ -386,7 +386,8 @@ module NapakalakiGame
       @canISteal=false
     end
     
-#    Elimina todos los tesoros del jugador.
+    
+    # Elimina todos los tesoros del jugador.
     def discardAllTreasures
       listTreasure = Array.new
       listTreasure = @visibleTreasures
@@ -394,6 +395,7 @@ module NapakalakiGame
         discardVisibleTreasure(treasure)
       }
         
+      listTreasure = Array.new
       listTreasure = @hiddenTreasures
       listTreasure.each{ |treasure|
         discardHiddenTreasure(treasure);
