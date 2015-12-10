@@ -4,6 +4,7 @@
 # and open the template in the editor.
 require_relative 'treasure_kind'
 require_relative 'treasure'
+require_relative 'player'
 
 module NapakalakiGame
 
@@ -47,7 +48,7 @@ module NapakalakiGame
     end
 
     def self.newDeath (t)
-       new(t,0,0,0,Array.new,Array.new,true)
+       new(t,Player.MAXLEVEL,@@MAXTREASURES,@@MAXTREASURES,Array.new,Array.new,true)
 
     end
     
