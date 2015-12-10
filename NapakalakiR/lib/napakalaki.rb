@@ -99,8 +99,16 @@ module NapakalakiGame
       
     end
     
+    #
+     # Elimina los tesoros visibles indicados en la lista de tesoros visibles
+     # del jugador. Al eliminar esos tesoros se devuelven al mazo de tesoros.
+     # @param treasures 
+     #
     def discardVisibleTreasures(treasures)
-      
+      treasures.each{ |treasure|
+            @currentPlayer.discardVisibleTreasure(treasure);
+            @dealer.giveTreasureBack(treasure);
+        }
     end
     
     def discardHiddenTreasures(treasures)
