@@ -47,7 +47,7 @@ module NapakalakiGame
     end
     
     def setEnemy(enemy)
-        @enemy = Player.new(enemy)
+        @enemy = enemy
     end
     
     def getLevels
@@ -356,11 +356,10 @@ module NapakalakiGame
     # En el caso que no se haya podido robar el tesoro por algún motivo devuelve null
     # @return Treasure tesoro robado   
     def stealTreasure
-      treasure = Treasure.new
       canI = canISteal
       if(canI)
         canYou = @enemy.canYouGiveMeATreasure
-           
+
         if (canYou)
           treasure = @enemy.giveMeATreasure
           @hiddenTreasures << treasure
@@ -374,23 +373,20 @@ module NapakalakiGame
     
     # Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
     def giveMeATreasure
-      tesoro = Treasure.new
       #Genero un número aletorio
       num = rand(0...@hiddenTreasures.length)
       # Elijo el tesoro a devolver
       tesoro = @hiddenTreasures.at(num);
       #Elimino el tesoro
-      @hiddenTreasures.remove(num);
+      @hiddenTreasures.delete_at(num);
       return tesoro;
     end
     
     # Devuelve true si el jugador tiene tesoros para ser robados
     # por otro jugador y false en caso contrario.
     def canYouGiveMeATreasure
-      if (@hiddenTreasures.size>0)
-        return true
-      end
-      return false
+      return !(@hiddenTreasures.empty?)
+
     end
     
     
@@ -420,7 +416,7 @@ module NapakalakiGame
     private :bringToLife, :getCombatLevel, :incrementLevels, :decrementLevels
     private :setPendingBadConsequence, :applyPrize, :applyBadConsequence
     private :canMakeTreasureVisible, :howManyVisibleTreasures, :dieIfNoTreasures
-    private :giveMeATreasure, :canYouGiveMeATreasure, :haveStolen
+    private :haveStolen
      
     
     
