@@ -53,9 +53,9 @@ module NapakalakiGame
         nex = rand(0...@players.length)
       else
         nex = 0 
-        for i in 0..@players.length
-          
-          if (@players[i].name==@currentPlayer.getName)
+        for i in 0...@players.length
+
+          if ((@players.at(i).getName) == (@currentPlayer.getName) )
             nex = (i + 1) % (@players.length)
           end
           
