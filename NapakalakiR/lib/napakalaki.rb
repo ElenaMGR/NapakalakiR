@@ -85,15 +85,15 @@ module NapakalakiGame
       # Variable para saber si ya está asignado
       asignado = false
       
-      for i in 0..@players.length-1
+      for i in 0...@players.length
         while(!asignado)
           # Numero del enemigo
           pos_enemy = rand(0...@players.length)
           if( i != pos_enemy)
-            @players[i].setEnemy(@players[pos_enemy])
+            @players.at(i).setEnemy(@players.at(pos_enemy))
             asignado = true
           end
-          
+          i += 1
         end
         asignado = false
       end
