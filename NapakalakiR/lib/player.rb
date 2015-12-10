@@ -128,10 +128,10 @@ module NapakalakiGame
       setPendingBadConsequence(pendingBad)
     end
     
-    #
-     # Pasa un objeto oculto de la mano del jugador a visible.
-     # @param t tesoro que se hace visible.
-     #
+
+    
+    # Pasa un objeto oculto de la mano del jugador a visible.
+    # @param t tesoro que se hace visible.
     def makeTreasureVisible (t)
       canI = canMakeTreasureVisible(t);
         if (canI)
