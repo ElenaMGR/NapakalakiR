@@ -132,8 +132,16 @@ module NapakalakiGame
         }
     end
     
+    
+    #
+     # Se pide al jugador actual que pase tesoros ocultos a visibles.
+     # @param treasures lista de tesoros que pasan de ocultos a visibles.
+     #
     def makeTreasuresVisible(treasures)
-      
+      treasures.each{ |t|
+        @currentPlayer.makeTreasureVisible(t)
+      }  
+        
     end
     
     #

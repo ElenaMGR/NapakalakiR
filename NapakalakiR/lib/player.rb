@@ -101,8 +101,24 @@ module NapakalakiGame
       
     end
     
-    def canMakeTreasureVisible (t)
-      
+    #
+     # Pasa un objeto oculto de la mano del jugador a visible.
+     # @param t tesoro que se hace visible.
+     #
+    def makeTreasureVisible (t)
+      canI = canMakeTreasureVisible(t);
+        if (canI)
+            @visibleTreasures << t
+            no_encontrado = true
+            i = 0
+            while( i < @hidddenTreasures.length && no_encontrado)
+              if ( @hiddenTreasures.at(i) == t)
+                no_encontrado = false
+                @hiddenTreasures.delete_at(i)
+              end
+              i+=1
+            end
+        end
     end
     
     #Devuelve el número de tesoros visibles de tipo tKind que tiene el jugador
