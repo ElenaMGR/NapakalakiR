@@ -148,23 +148,23 @@ module NapakalakiGame
      # @return resultado del combate.
      #
     def combat (m)
-      myLevel = getCombatLevel();
-      monsterLevel = m.getCombatLevel();
+      myLevel = getCombatLevel
+      monsterLevel = m.getCombatLevel
         
       if (myLevel>monsterLevel)
         applyPrize(m);
             
         if (@level>=@@MAXLEVEL)
-          cr = CombatResult::WINGAME;
+          cr = CombatResult::WINGAME
         else
-          cr = CombatResult::WIN;
+          cr = CombatResult::WIN
         end
       else
         applyBadConsequence(m);
-        cr = CombatResult::LOSE;
+        cr = CombatResult::LOSE
       end
         
-      return cr;
+      return cr
     end
     
     
