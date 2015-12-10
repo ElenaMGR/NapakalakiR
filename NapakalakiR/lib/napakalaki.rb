@@ -111,8 +111,19 @@ module NapakalakiGame
       
     end
     
+    #
+     # Se encarga de solicitar a CardDealer la inicializacion de los mazos
+     # de cartas de Tesoros y de Monstruos, de inicializar los jugadores
+     # proporcionandoles un nombre, asignarle a cada jugador su enemigo y de 
+     # iniciar el juego con la llamada nextTurn() para pasar al siguiente
+     # turno.
+     # @param players 
+     #
     def initGame(players)
-      
+      initPlayers(players);
+      setEnemies();      
+      dealer.initCards();
+      nextTurn();
     end
     
     def nextTurn
