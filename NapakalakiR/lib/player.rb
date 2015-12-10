@@ -146,7 +146,7 @@ module NapakalakiGame
             @visibleTreasures << t
             no_encontrado = true
             i = 0
-            while( i < @hidddenTreasures.length && no_encontrado)
+            while( i < @hiddenTreasures.length && no_encontrado)
               if ( @hiddenTreasures.at(i) == t)
                 no_encontrado = false
                 @hiddenTreasures.delete_at(i)
@@ -215,20 +215,20 @@ module NapakalakiGame
       while (i < @visibleTreasures.size()  && sePuede)
         if (t.getType()!= TreasureKind::ONEHAND)
           # Si ya lo tiene equipado no se puede equipar
-          if (t.getType()==@visibleTreasures.at(i).get_type())
+          if (t.getType()==@visibleTreasures.at(i).getType)
             sePuede=false;     
           end
-          if (@visibleTreasures.at(i).get_type()==TreasureKind::ONEHAND)
+          if (@visibleTreasures.at(i).getType==TreasureKind::ONEHAND)
             oneHand+=1;
           end
         else
           # Cuento cuantas armas de una mano tiene equipadas
-          if (t.getType()==@visibleTreasures.at(i).get_type())
+          if (t.getType()==@visibleTreasures.at(i).getType)
             oneHand+=1;
           end
         end
         # Compruebo si tiene equipado un arma de dos manos     
-        if (@visibleTreasures.at(i).get_type()==TreasureKind::BOTHHANDS)
+        if (@visibleTreasures.at(i).getType==TreasureKind::BOTHHANDS)
           bothhands=true;
         end
              
