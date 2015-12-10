@@ -15,9 +15,7 @@ module NapakalakiGame
     attr_reader :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
     attr_writer :enemy
   
-    @@MAXLEVEL = 10
-  
-    @pendingBadConsequence
+    @@MAXLEVEL = 10 
      
     def initialize (name)
       @name = name
@@ -26,6 +24,7 @@ module NapakalakiGame
       @level = 1
       @hiddenTreasures = Array.new
       @visibleTreasures = Array.new
+      @pendingBadConsequence = BadConsequence.newLevelNumberOfTreasures("", 0, 0, 0)
     end
     
     def getName
@@ -326,21 +325,21 @@ module NapakalakiGame
     # El número de tesoros que se les proporciona viene dado por el valor que saque al tirar
     # el dado.
     def initTreasures
-      dealer = CardDealer.getInstace()
-      dice = Dice.getInstance()
-      bringToLife()
+      dealer = CardDealer.instance
+      dice = Dice.instance
+      bringToLife
       
-      treasure = dealer.nextTreasure()
+      treasure = dealer.nextTreasure
       @hiddenTreasures << treasure
-      number = dice.nextNumber()
+      number = dice.nextNumber
         
       if (number>1)
-        treasure = dealer.nextTreasure();
+        treasure = dealer.nextTreasure
         @hiddenTreasures << treasure
       end
       
       if (number==6)
-        treasure = dealer.nextTreasure();
+        treasure = dealer.nextTreasure
         @hiddenTreasures << treasure
       end
     end
