@@ -155,7 +155,7 @@ module NapakalakiGame
     def initGame(players)
       initPlayers(players)
       setEnemies     
-      dealer.initCards
+      @dealer.initCards
       nextTurn
     end
     
@@ -175,7 +175,7 @@ module NapakalakiGame
        if (stateOK)
             @currentMonster = dealer.nextMonster
             @currentPlayer = nextPlayer
-            dead = currentPlayer.isDead
+            dead = @currentPlayer.isDead
             
             if (dead)
                 @currentPlayer.initTreasures
