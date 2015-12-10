@@ -130,7 +130,7 @@ module NapakalakiGame
     
     
     # Comprueba si el tesoro t se puede pasar de oculto a visible
-    def makeTreasureVisible (t)
+    def canMakeTreasureVisible (t)
       sePuede = true
       # Solo podrá tener equipado un tesoro de cada tipo, 
       # salvo para el caso de tesoros de una mano de los
