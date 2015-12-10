@@ -125,12 +125,11 @@ module NapakalakiGame
     end
 
 
-#      Ajusta el mal rollo de un monstruo a la posibilidad del jugador que tiene
-#      que cumplirlo.
-#      @param v lista de tesoros visibles del jugador
-#      @param h lista de tesoros ocultos del jugador.
-#      @return 
-#     
+    # Ajusta el mal rollo de un monstruo a la posibilidad del jugador que tiene
+    # que cumplirlo.
+    # @param v lista de tesoros visibles del jugador
+    # @param h lista de tesoros ocultos del jugador.
+    # @return     
     def adjustToFitTreasureList (v,h)
       nHidden = 0
       nVisible = 0
@@ -151,9 +150,9 @@ module NapakalakiGame
               h.each { |treasure| 
                 if(@specificHiddenTreasures.include?(treasure.getType) )
                   hidden << treasure.getType
-                end
-            
-              }                
+                end  
+              }
+              
             end
             
       end
@@ -172,9 +171,9 @@ module NapakalakiGame
               v.each { |treasure| 
                 if(@specificVisibleTreasures.include?(treasure.getType) )
                   visible << treasure.getType
-                end
-            
-              }                
+                end    
+              }  
+              
             end
             
       end
