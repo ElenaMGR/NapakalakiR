@@ -120,14 +120,36 @@ module NapakalakiGame
      # @param players 
      #
     def initGame(players)
-      initPlayers(players);
-      setEnemies();      
-      dealer.initCards();
-      nextTurn();
+      initPlayers(players)
+      setEnemies     
+      dealer.initCards
+      nextTurn
     end
     
+    
+    #
+     # Usa el método nextTurnAllowed(), donde se verifíca si el jugador activo 
+     # cumple con las reglas del juego para poder terminar su turno.
+     # En caso de que nextTurnAllowed devuelva true, se le solicita a CardDeale el
+     # siguiente monstruo al que se enfrentará ese jugador y se actualiza el jugador activo
+     # al siguiente jugador.
+     # En caso de que el nuevo jugador activo esté muerto, por el combate en su anterior turno o 
+     # porque es el primer turno, se inicilian sus tesoros siguiendo las reglas del juego.
+     # @return devuelve nextTurnAllowed()
+     #
     def nextTurn
-      
+      stateOK = nextTurnAllowed
+       if (stateOK)
+            @currentMonster = dealer.nextMonster
+            @currentPlayer = nextPlayer
+            dead = currentPlayer.isDead
+            
+            if (dead)
+                @currentPlayer.initTreasures
+            end
+       end
+        
+        return stateOK;
     end
     
     
