@@ -48,7 +48,7 @@ module NapakalakiGame
     end
 
     def self.newDeath (t)
-       new(t,Player.MAXLEVEL,@@MAXTREASURES,@@MAXTREASURES,Array.new,Array.new,true)
+       new(t,Player.maxLevel,@@MAXTREASURES,@@MAXTREASURES,Array.new,Array.new,true)
 
     end
     

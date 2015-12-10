@@ -32,6 +32,12 @@ module NapakalakiGame
         return @name;
     end
     
+    # Metodo de clase que accede a la variabla MAXTREASURES
+    def self.maxLevel
+      @@MAXLEVEL
+    end
+    
+    
     #Cambia el atributo canISteal a false cuando el jugador roba un tesoro. 
     def haveStolen
         @canISteal= false;
