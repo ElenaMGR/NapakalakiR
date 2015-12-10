@@ -248,8 +248,29 @@ module NapakalakiGame
       
     end
     
+    
+    
+    # Se elimina un tesoro oculto.
+    # Si tiene un mal rollo pendiente e implica eliminar un tesoro oculto
+    # se elimina del mal rollo tambien. Luego se comprueban si el jugador
+    # esta vivo.
+    # @param t tesoro que se va a descartar.
     def discardHiddenTreasure (t)
+      no_encontrado = true
+      i=0
+      while (i < @hiddenTreausres.length && no_encontrado)
+        if (@hiddenTreausres[i]==t)
+          no_encontrado= false
+          @hiddenTreausres.delete_at(i)
+        end
+        i+=1
+      end
       
+      if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
+            @pendingBadConsequence.substracVisibleTreasure(t);
+      end
+        
+      dieIfNoTreasures
     end
     
     
