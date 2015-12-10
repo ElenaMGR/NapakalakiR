@@ -163,11 +163,11 @@ module NapakalakiGame
       if(@unusedTreasures.empty?)
         @unusedTreasures = @usedTreasures
         @usedTreasures.clear
-        shuffleTreasures();
+        shuffleTreasures
       end
      # nuevo_tesoro = @unusedTreasures.at(@unusedTreasures.length-1);
       nuevo_tesoro = @unusedTreasures.pop
-      return nuevo_tesoro;
+      return nuevo_tesoro
     end
     
     #
@@ -181,7 +181,7 @@ module NapakalakiGame
         if(@unusedMonsters.empty?)
             @unusedMonsters = @usedMonsters
             @usedMonster.clear
-            shuffleMonster();
+            shuffleMonster
         end
         #nuevo_monstruo = @unusedMonsters.at(@unusedMonsters.length-1);
         nuevo_monstruo = @unusedMonsters.pop
