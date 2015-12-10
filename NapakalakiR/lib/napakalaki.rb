@@ -92,9 +92,9 @@ module NapakalakiGame
           if( i != pos_enemy)
             @players.at(i).setEnemy(@players.at(pos_enemy))
             asignado = true
-          end
-          i += 1
+          end      
         end
+        
         asignado = false
       end
       
