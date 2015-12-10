@@ -125,8 +125,64 @@ module NapakalakiGame
     end
 
 
+#      Ajusta el mal rollo de un monstruo a la posibilidad del jugador que tiene
+#      que cumplirlo.
+#      @param v lista de tesoros visibles del jugador
+#      @param h lista de tesoros ocultos del jugador.
+#      @return 
+#     
     def adjustToFitTreasureList (v,h)
-
+      nHidden = 0
+      nVisible = 0
+      hidden = Array.new
+      visible = Array.new
+        
+      # Si el jugador tiene objetos ocultos
+      if(!h.empty? )
+          # Si el jugador tiene objetos ocultos, quitamos los que no posea
+            if(@nHiddenTreasures > 0) # Si es un numero lo ajustamos
+                if(@nHiddenTreasures > h.length())
+                    nHidden = h.length();
+                else
+                    nHidden = @nHiddenTreasures;
+                end
+                
+            else #Si son objetos especificos los buscamos y eliminamos
+              h.each { |treasure| 
+                if(@specificHiddenTreasures.include?(treasure.getType) )
+                  hidden << treasure.getType
+                end
+            
+              }                
+            end
+            
+      end
+      
+      
+      if(!v.empty? )
+          # Si el jugador tiene objetos ocultos, quitamos los que no posea
+            if(@nVisibleTreasures > 0) # Si es un numero lo ajustamos
+                if(@nVisibleTreasures > v.length)
+                    nVisible = v.length
+                else
+                    nVisible = @nVisibleTreasures;
+                end
+                
+            else #Si son objetos especificos los buscamos y eliminamos
+              v.each { |treasure| 
+                if(@specificVisibleTreasures.include?(treasure.getType) )
+                  visible << treasure.getType
+                end
+            
+              }                
+            end
+            
+      end
+      
+      nuevo = BadConsequence.newLevelSpecificTreasures(@text, @levels, visible, hidden);
+      nuevo.nHiddenTreasures = nHidden;
+      nuevo.nVisibleTreasures = nVisible;
+      return nuevo;
     end
 
 
