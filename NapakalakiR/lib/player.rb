@@ -314,8 +314,27 @@ module NapakalakiGame
       
     end
     
+    
+#    
+#      Comprueba si un jugador puede robar un tesoro a su enemigo.
+#      Si se puede, el tesoro se almacenaŕa en ocultos.
+#      El jugador no puede volver a robar otro tesoro durante la partida.
+#      En el caso que no se haya podido robar el tesoro por algún motivo devuelve null
+#      @return Treasure tesoro robado
+#     
     def stealTreasure
-      
+      treasure = nill
+      canI = canISteal
+      if(canI)
+        canYou = @enemy.canYouGiveMeATreasure
+           
+        if (canYou)
+          treasure = @enemy.giveMeATreasure
+          @hiddenTreasures << treasure
+          haveStolen
+        end
+      end
+      return treasure
     end
     
     # Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
