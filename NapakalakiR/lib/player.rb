@@ -28,7 +28,7 @@ module NapakalakiGame
     end
     
     def getName
-        return @name;
+        return @name
     end
     
     # Metodo de clase que accede a la variabla MAXTREASURES
@@ -39,23 +39,23 @@ module NapakalakiGame
     
     #Cambia el atributo canISteal a false cuando el jugador roba un tesoro. 
     def haveStolen
-        @canISteal= false;
+        @canISteal= false
     end
     
     def canISteal
-        return @canISteal;
+        return @canISteal
     end
     
     def setEnemy(enemy)
-        @enemy=enemy;
+        @enemy = Player.new(enemy)
     end
     
     def getLevels
-        return @level;
+        return @level
     end
     
     def isDead  
-        return @dead;
+        return @dead
     end
     
     def getHiddenTreasures
@@ -356,7 +356,7 @@ module NapakalakiGame
     # En el caso que no se haya podido robar el tesoro por algún motivo devuelve null
     # @return Treasure tesoro robado   
     def stealTreasure
-      treasure = nill
+      treasure = Treasure.new
       canI = canISteal
       if(canI)
         canYou = @enemy.canYouGiveMeATreasure
@@ -425,7 +425,7 @@ module NapakalakiGame
     
     
     def to_s()
-      " #{@name} \t level: #{@level} \t dead: #{@dead} \t enemy: #{@nenemy}"
+      " #{@name} \t level: #{@level} \t dead: #{@dead} \t enemy: #{@enemy.getName}\n"
     end
   end
 
