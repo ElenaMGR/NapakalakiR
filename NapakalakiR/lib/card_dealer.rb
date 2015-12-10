@@ -13,11 +13,14 @@ module NapakalakiGame
     
     include Singleton
     
-    @unusedMonsters = Array.new    
-    @usedMonsters = Array.new
-    @usedTreasures = Array.new
-    @unusedTreasures = Array.new
     
+    def initialize
+      # Atributos
+      @unusedMonsters = Array.new    
+      @usedMonsters = Array.new
+      @usedTreasures = Array.new
+      @unusedTreasures = Array.new
+    end
     
     # Inicializa el mazo de cartas de Tesoros.
     def initTreasureCardDeck

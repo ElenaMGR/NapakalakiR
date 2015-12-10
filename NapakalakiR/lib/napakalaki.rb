@@ -18,9 +18,14 @@ module NapakalakiGame
     
     include Singleton
     
-    # Atributos
-    @dealer = CardDealer.instance
-    @players = Array.new
+    
+    def initialize
+      # Atributos
+      @dealer = CardDealer.instance
+      @players = Array.new
+      @currentPlayer = Player.new("")
+      @currentMonster = Monster.new("", 0, 0, 0)
+    end
     
     def getCurrentPlayer      
         return @currentPlayer;
@@ -38,13 +43,13 @@ module NapakalakiGame
     def initPlayers(name)
       name.each { |n| 
         p = Player.new(n)
-        @players<<p
+        @players << Player.new(n)
       }
     end
     
     # Decide qué jugador es el siguiente en jugar
     def nextPlayer
-      if (@currentPlayer.name=="") # Si es la primera jugada
+      if (@currentPlayer.getName=="") # Si es la primera jugada
         nex = rand(0...@players.length)
       else
         nex = 0 
@@ -67,7 +72,7 @@ module NapakalakiGame
     # Devuelve false si el jugador activo no puede pasar de turno y 
     # true en caso contrario. Si currentPlayer es null, devuelve true
     def nextTurnAllowed
-      if(@currentPlayer == nill)
+      if(@currentPlayer.nil?)
             return true;
       end
         return @currentPlayer.validState
@@ -173,7 +178,7 @@ module NapakalakiGame
     def nextTurn
       stateOK = nextTurnAllowed
        if (stateOK)
-            @currentMonster = dealer.nextMonster
+            @currentMonster = @dealer.nextMonster
             @currentPlayer = nextPlayer
             dead = @currentPlayer.isDead
             
