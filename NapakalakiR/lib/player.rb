@@ -93,24 +93,23 @@ module NapakalakiGame
       @pendingBadConsequence = b
     end
     
-    #
-    #* Aplica el buen rolloo del monstruo vencido al jugador, sumando los niveles
-     #* correspondientes y pidiendo al CardDealer que le dé el número de 
-     #* tesoros indicado en el buen rollo del monstruo. Esos tesoros se añaden
-     #* a sus tesoros
-     #* @param m Monstruo vencido
-     
+
+    # Aplica el buen rolloo del monstruo vencido al jugador, sumando los niveles
+    # correspondientes y pidiendo al CardDealer que le dé el número de 
+    # tesoros indicado en el buen rollo del monstruo. Esos tesoros se añaden
+    # a sus tesoros
+    # @param m Monstruo vencido   
     def applyPrize (m)
       nLevels = m.getLevelsGained
-      incrementLevels(nLevels);
+      incrementLevels(nLevels)
       nTreasures = m.getTreasuresGained
       if (nTreasures > 0)
-        dealer = CardDealer.getInstace();
+        dealer = CardDealer.getInstace()
             
         i = 0
-        while (i <= nTreasures)
-          treasure = dealer.nextTreasure();
-          @hiddenTreasures << treasure;
+        while (i < nTreasures)
+          treasure = dealer.nextTreasure()
+          @hiddenTreasures << treasure
         end
       end      
     end
