@@ -115,8 +115,17 @@ module NapakalakiGame
       end      
     end
     
+    
+    # Realiza el mal rollo de un monstruo contra el jugador.
+    # Aplica las consecuencias que puede y las que no las guarda
+    # en el mal rollo pendiente.
+    # @param m monstruo con el que ha perdido
     def applyBadConsequence (m)
-      
+      badConsequence = m.getBadConsequence()
+      nLevels = badConsequence.getLevels()
+      decrementLevels(nLevels)
+      pendingBad = badConsequence.adjustToFitTreasureList(@visibleTreasures, @hiddenTreasures)
+      setPendingBadConsequence(pendingBad);
     end
     
     #
