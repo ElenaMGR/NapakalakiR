@@ -222,7 +222,29 @@ module NapakalakiGame
       return sePuede
     end
     
+    
+
+    # Se elimina un tesoro visible.
+    # Si tiene un mal rollo pendiente e implica eliminar un tesoro visible
+    # se elimina del mal rollo tambien. Luego se comprueban si el jugador
+    # esta vivo.
+    # @param t tesoro que se va a descartar.
     def discardVisibleTreasure (t)
+      no_encontrado = true
+      i=0
+      while (i < @visibleTreausres.length && no_encontrado)
+        if (@visibleTreasures[i]==t)
+          no_encontrado= false
+          @visibleTreasures.delete_at(i)
+        end
+        i+=1
+      end
+      
+      if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
+            @pendingBadConsequence.substracVisibleTreasure(t);
+      end
+        
+      dieIfNoTreasures
       
     end
     
