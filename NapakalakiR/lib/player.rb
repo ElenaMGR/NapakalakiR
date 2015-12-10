@@ -23,7 +23,7 @@ module NapakalakiGame
       @name = name
       @dead = true
       @canISteal = true
-      @level = 0
+      @level = 1
       @hiddenTreasures = Array.new
       @visibleTreasures = Array.new
     end
@@ -85,7 +85,11 @@ module NapakalakiGame
     
     # Decrementa el nivel del jugador en i niveles
     def decrementLevels (l)
-      @level -= l
+      if (@level-l<=0)
+        @level=1
+      else
+        @level -= l
+      end
     end
     
     # Asigna el mal rollo al jugador
