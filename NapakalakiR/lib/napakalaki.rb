@@ -51,6 +51,7 @@ module NapakalakiGame
     def nextPlayer
       if (@currentPlayer.getName=="") # Si es la primera jugada
         nex = rand(0...@players.length)
+        
       else
         nex = 0 
         for i in 0...@players.length
@@ -63,7 +64,7 @@ module NapakalakiGame
       
       end
       
-      return @players[nex]
+      return @players.at(nex)
  
     end
 
