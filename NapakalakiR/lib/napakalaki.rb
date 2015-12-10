@@ -55,7 +55,7 @@ module NapakalakiGame
         nex = 0 
         for i in 0..@players.length
           
-          if (@players[i].name==@currentPlayer.name)
+          if (@players[i].name==@currentPlayer.getName)
             nex = (i + 1) % (@players.length)
           end
           
