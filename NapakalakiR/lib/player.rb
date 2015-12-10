@@ -129,8 +129,8 @@ module NapakalakiGame
     # en el mal rollo pendiente.
     # @param m monstruo con el que ha perdido
     def applyBadConsequence (m)
-      badConsequence = m.getBadConsequence()
-      nLevels = badConsequence.getLevels()
+      badConsequence = m.getBadConsequence
+      nLevels = badConsequence.getLevels
       decrementLevels(nLevels)
       pendingBad = badConsequence.adjustToFitTreasureList(@visibleTreasures, @hiddenTreasures)
       setPendingBadConsequence(pendingBad)
@@ -267,7 +267,7 @@ module NapakalakiGame
     def discardVisibleTreasure (t)
       no_encontrado = true
       i=0
-      while (i < @visibleTreausres.length && no_encontrado)
+      while (i < @visibleTreasures.length && no_encontrado)
         if (@visibleTreasures[i]==t)
           no_encontrado= false
           @visibleTreasures.delete_at(i)
@@ -275,6 +275,7 @@ module NapakalakiGame
         i+=1
       end
       
+
       if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
             @pendingBadConsequence.substracVisibleTreasure(t);
       end
@@ -300,6 +301,7 @@ module NapakalakiGame
         end
         i+=1
       end
+      
       
       if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
             @pendingBadConsequence.substracHiddenTreasure(t);
