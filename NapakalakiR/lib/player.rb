@@ -309,8 +309,30 @@ module NapakalakiGame
       return false
     end
     
+    
+    
+    # Proporciona nuevos tesoros a un jugador cuando está en su primer turno o se ha 
+    # quedado sin tesoros.
+    # El número de tesoros que se les proporciona viene dado por el valor que saque al tirar
+    # el dado.
     def initTreasures
+      dealer = CardDealer.getInstace()
+      dice = Dice.getInstance()
+      bringToLife()
       
+      treasure = dealer.nextTreasure()
+      @hiddenTreasures << treasure
+      number = dice.nextNumber()
+        
+      if (number>1)
+        treasure = dealer.nextTreasure();
+        @hiddenTreasures << treasure
+      end
+      
+      if (number==6)
+        treasure = dealer.nextTreasure();
+        @hiddenTreasures << treasure
+      end
     end
     
     
