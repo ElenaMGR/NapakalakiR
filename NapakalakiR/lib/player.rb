@@ -124,8 +124,31 @@ module NapakalakiGame
       end
     end
     
+    #
+     # Si el nivel de combate del jugador supera al del monstruo, se aplica el buen rollo 
+     # y se puede ganar el combate o el juego, en otro caso, el jugador pierde el combate 
+     # y se aplica el mal rollo correspondiente.
+     # @param m Monstruo con el que combate
+     # @return resultado del combate.
+     #
     def combat (m)
-      
+      myLevel = getCombatLevel();
+      monsterLevel = m.getCombatLevel();
+        
+      if (myLevel>monsterLevel)
+        applyPrize(m);
+            
+        if (@level>=@@MAXLEVEL)
+          cr = CombatResult::WINGAME;
+        else
+          cr = CombatResult::WIN;
+        end
+      else
+        applyBadConsequence(m);
+        cr = CombatResult::LOSE;
+      end
+        
+      return cr;
     end
     
     
