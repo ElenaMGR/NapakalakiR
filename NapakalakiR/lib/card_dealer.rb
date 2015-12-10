@@ -166,8 +166,21 @@ module NapakalakiGame
       return nuevo_tesoro;
     end
     
+    #
+     # Devuelve el siguiente monstruo que hay en el mazo de monstruos y lo elimina
+     # de él. 
+     # Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     # al mazo de monstruos y lo baraja.
+     #
     def nextMonster
-      
+        # Si esta vacio el mazo de monstruos.
+        if(@unusedMonsters.empty?)
+            @unusedMonsters = @usedMonsters
+            shuffleMonster();
+        end
+        #nuevo_monstruo = @unusedMonsters.at(unusedMonsters.size()-1);
+        nuevo_monstruo = @unusedMonsters.pop
+        return nuevo_monstruo;
     end
     
     # Introduce en el mazo de descartes de tesoros el tesoro t
