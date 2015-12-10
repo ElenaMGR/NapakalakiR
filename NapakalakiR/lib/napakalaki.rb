@@ -95,8 +95,16 @@ module NapakalakiGame
       
     end
     
+    
+    #
+     # Pasa el control al jugador actual para que lleve a cabo el combate con el 
+     # monstruo que le ha tocado.
+     # @return CombatResult
+     #
     def developCombat
-      
+      combatResult = @currentPlayer.combat(@currentMonster)
+      @dealer.giveMonsterBack(@currentMonster)
+      return combatResult
     end
     
     #
@@ -111,8 +119,17 @@ module NapakalakiGame
         }
     end
     
+    
+    #
+     # Elimina los tesoros ocultos indicados en la lista de tesoros ocultos
+     # del jugador. Al eliminar esos tesoros se devuelven al mazo de tesoros.
+     # @param treasures 
+     #
     def discardHiddenTreasures(treasures)
-      
+      treasures.each{ |treasure|
+            @currentPlayer.discardHiddenTreasure(treasure);
+            @dealer.giveTreasureBack(treasure);
+        }
     end
     
     def makeTreasuresVisible(treasures)
