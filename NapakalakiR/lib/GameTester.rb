@@ -7,7 +7,7 @@
 #última
 
 require 'singleton'
-require_relative 'Napakalaki'
+require_relative 'napakalaki'
 require_relative 'Command'
 
 module Test

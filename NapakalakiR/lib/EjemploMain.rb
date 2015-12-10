@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-require_relative "Napakalaki"
+require_relative "napakalaki"
 require_relative "GameTester"
 
 module NapakalakiGame
