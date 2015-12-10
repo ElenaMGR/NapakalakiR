@@ -125,7 +125,7 @@ module NapakalakiGame
       nLevels = badConsequence.getLevels()
       decrementLevels(nLevels)
       pendingBad = badConsequence.adjustToFitTreasureList(@visibleTreasures, @hiddenTreasures)
-      setPendingBadConsequence(pendingBad);
+      setPendingBadConsequence(pendingBad)
     end
     
     #
