@@ -107,7 +107,20 @@ module NapakalakiGame
 
 
     def substracHiddenTreasure (t)
-
+      if( @nHiddenTreasures != 0 ) # Si es un numero se reduce en 1
+            @nHiddenTreasures-=1;
+      else  # Si es un tesoro especifico se elimina
+          i = 0
+          no_encontrado = true
+          while(i < @specificHiddenTreasures && no_encontrado)
+            if(@specificHiddenTreasures.at(i) == t)
+              @specificHiddenTreasures.delete_at(i)
+              no_encontrado = false
+            end
+            i+=1
+          end  
+            
+      end
     end
 
 
