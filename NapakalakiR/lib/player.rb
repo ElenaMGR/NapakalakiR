@@ -267,7 +267,7 @@ module NapakalakiGame
       end
       
       if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
-            @pendingBadConsequence.substracVisibleTreasure(t);
+            @pendingBadConsequence.substracHiddenTreasure(t);
       end
         
       dieIfNoTreasures
