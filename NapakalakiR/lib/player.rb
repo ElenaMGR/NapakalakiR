@@ -278,7 +278,7 @@ module NapakalakiGame
       end
       
 
-      if( (@pendingBadConsequence.nil?) && (!@pendingBadConsequence.isEmpty) )
+      if( (!@pendingBadConsequence.nil?) && (!@pendingBadConsequence.isEmpty) )
             @pendingBadConsequence.substracVisibleTreasure(t);
       end
         
@@ -296,16 +296,16 @@ module NapakalakiGame
     def discardHiddenTreasure (t)
       no_encontrado = true
       i=0
-      while (i < @hiddenTreausres.length && no_encontrado)
-        if (@hiddenTreausres[i]==t)
+      while (i < @hiddenTreasures.length && no_encontrado)
+        if (@hiddenTreasures[i]==t)
           no_encontrado= false
-          @hiddenTreausres.delete_at(i)
+          @hiddenTreasures.delete_at(i)
         end
         i+=1
       end
       
       
-      if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
+      if( (!@pendingBadConsequence.nil?) && (!@pendingBadConsequence.isEmpty) )
             @pendingBadConsequence.substracHiddenTreasure(t);
       end
         
@@ -402,15 +402,15 @@ module NapakalakiGame
     
     # Elimina todos los tesoros del jugador.
     def discardAllTreasures
-      listTreasure = Array.new
-      listTreasure = @visibleTreasures
-      listTreasure.each{ |treasure|
+      #listTreasure = Array.new
+      listTreasurev = Array.new(@visibleTreasures)
+      listTreasurev.each{ |treasure|  
         discardVisibleTreasure(treasure)
       }
         
-      listTreasure = Array.new
-      listTreasure = @hiddenTreasures
-      listTreasure.each{ |treasure|
+      #listTreasure = Array.new
+      listTreasureh = Array.new(@hiddenTreasures)
+      listTreasureh.each{ |treasure|    
         discardHiddenTreasure(treasure);
       }
      
