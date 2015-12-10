@@ -420,4 +420,8 @@ module NapakalakiGame
      
   end
 
+  
+  def to_s()
+      " #{@name} \t level: #{@level} \t dead: #{@dead} \t enemy: #{@nenemy}"
+  end
 end

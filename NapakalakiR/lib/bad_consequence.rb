@@ -73,6 +73,14 @@ module NapakalakiGame
         return @death;
     end
     
+    # Métodos set
+    def setNHiddenTreasures (nh)
+      @nHiddenTreasures = nh
+    end
+   
+    def setNVisibleTreasures (nv)
+      @nVisibleTreasures = nv
+    end
     
     # Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
     # vacío, eso significa que el conjunto de atributos del mal rollo indica 
@@ -178,10 +186,10 @@ module NapakalakiGame
             
       end
       
-      nuevo = BadConsequence.newLevelSpecificTreasures(@text, @levels, visible, hidden);
-      nuevo.nHiddenTreasures = nHidden;
-      nuevo.nVisibleTreasures = nVisible;
-      return nuevo;
+      nuevo = BadConsequence.newLevelSpecificTreasures(@text, @levels, visible, hidden)
+      nuevo.setNHiddenTreasures(nHidden)
+      nuevo.setNVisibleTreasures(nVisible)
+      return nuevo
     end
 
 

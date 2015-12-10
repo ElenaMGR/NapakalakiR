@@ -199,4 +199,6 @@ module NapakalakiGame
     private :initPlayers, :nextPlayer, :nextTurnAllowed, :setEnemies
     
   end
+  
+ 
 end
