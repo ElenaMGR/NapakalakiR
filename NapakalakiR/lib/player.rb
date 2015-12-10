@@ -76,7 +76,7 @@ module NapakalakiGame
     # tenga equipados
     def getCombatLevel
       combat_level=@level
-      @hiddenTreasures.each { |ht|
+      @visibleTreasures.each { |ht|
         combat_level += ht.bonus
       }
       return combat_level
@@ -113,12 +113,14 @@ module NapakalakiGame
       incrementLevels(nLevels)
       nTreasures = m.getTreasuresGained
       if (nTreasures > 0)
-        dealer = CardDealer.getInstace()
+        dealer = CardDealer.instance
             
         i = 0
         while (i < nTreasures)
           treasure = dealer.nextTreasure()
           @hiddenTreasures << treasure
+          
+          i+=1
         end
       end      
     end
@@ -276,7 +278,7 @@ module NapakalakiGame
       end
       
 
-      if( (@pendingBadConsequence != nill) && (!@pendingBadConsequence.isEmpty) )
+      if( (@pendingBadConsequence.nil?) && (!@pendingBadConsequence.isEmpty) )
             @pendingBadConsequence.substracVisibleTreasure(t);
       end
         

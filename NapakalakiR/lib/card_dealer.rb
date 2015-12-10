@@ -145,12 +145,12 @@ module NapakalakiGame
     
     # Baraja el mazo de cartas de tesoros
     def shuffleTreasures
-      @unusedTreasures.shuffle
+      @unusedTreasures.shuffle!
     end
 
     # Baraja el mazo de cartas de monstruos
     def shuffleMonster
-      @unusedMonsters.shuffle
+      @unusedMonsters.shuffle!
     end
     ##
      # Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
