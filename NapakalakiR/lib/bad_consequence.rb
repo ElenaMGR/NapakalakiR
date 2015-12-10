@@ -84,9 +84,25 @@ module NapakalakiGame
       return vacio;
     end
 
-
+    #
+    # Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
+    # @param t Tesoro que se elimina.
+    #
     def substracVisibleTreasure (t)
-
+      if( @nVisibleTreasures != 0 ) # Si es un numero se reduce en 1
+            @nVisibleTreasures-=1;
+      else  # Si es un tesoro especifico se elimina
+          i = 0
+          no_encontrado = true
+          while(i < @specificVisibleTreasures && no_encontrado)
+            if(@specificVisibleTreasures.at(i) == t)
+              @specificVisibleTreasures.delete_at(i)
+              no_encontrado = false
+            end
+            i+=1
+          end  
+            
+      end
     end
 
 

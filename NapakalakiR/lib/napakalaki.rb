@@ -85,7 +85,7 @@ module NapakalakiGame
           # Numero del enemigo
           pos_enemy = rand(0...@players.length)
           if( i != pos_enemy)
-            @players[i].emeny(@players[pos_enemy])
+            @players[i].setEnemy(@players[pos_enemy])
             asignado = true
           end
           
