@@ -47,7 +47,8 @@ module NapakalakiGame
     end
     
     def to_s
-      "Nombre: #{@name}, CombatLevel: #{@combatLevel} \n  #{@badConsequence.to_s},\n  #{@prize.to_s}"
+      "Monster: #{@name} \t CombatLevel: #{@combatLevel} \n"+
+      "  #{@badConsequence.to_s}  #{@prize.to_s} \n"
     end
   end
 

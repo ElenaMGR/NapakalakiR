@@ -194,7 +194,10 @@ module NapakalakiGame
 
 
     def to_s
-      "Mal rollo: #{@text} \n Niveles perdidos: #{@levels}, Tesoros visibles: #{@nVisibleTreasures}, Tesoros ocultos: #{@nHiddenTreasures},Tesoros específicos visibles: #{@specificVisibleTreasures}, Tesoros específicos ocultos: #{@specificHiddenTreasures}, Muerto: #{@death}."
+      "BadConsequence = #{@text} \n "+
+        "\t Niveles perdidos: #{@levels} \t death: #{@death} \n"+
+        "\t Tesoros visibles: #{@nVisibleTreasures} \t Tesoros ocultos: #{@nHiddenTreasures} \n"+
+        "\t Tesoros específicos visibles: #{@specificVisibleTreasures} \t Tesoros específicos ocultos: #{@specificHiddenTreasures} \n"
     end
   end
 

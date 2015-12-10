@@ -32,6 +32,10 @@ module NapakalakiGame
         return @type;
     end
 
+    def to_s
+      "Treasure: #{@name} \n tipo: #{@type} \t bonus: #{@bonus} \n"
+    end
+    
   end
 
 end

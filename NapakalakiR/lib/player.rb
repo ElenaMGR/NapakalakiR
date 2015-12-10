@@ -238,7 +238,7 @@ module NapakalakiGame
       if(sePuede)
         # Si se tienen equipado 1 ó 2 tesoros de una mano, no se podrá 
         # tener equipado ningún tesoro de dos manos. 
-        if (oneHand>0 && (t.getType()== TreasureKind.BOTHHANDS))
+        if (oneHand>0 && (t.getType()== TreasureKind::BOTHHANDS))
           sePuede=false;
 
         # Si se tiene equipado un tesoro de dos manos, no se podrá tener 
@@ -246,7 +246,7 @@ module NapakalakiGame
         # Si el tipo es ONEHAND y ya tiene dos equipadas, no se puede
                         
         else 
-          if(t.getType() == TreasureKind.ONEHAND)
+          if(t.getType() == TreasureKind::ONEHAND)
             if(oneHand==2 || bothhands)
               sePuede=false;
             end
@@ -418,10 +418,12 @@ module NapakalakiGame
     private :canMakeTreasureVisible, :howManyVisibleTreasures, :dieIfNoTreasures
     private :giveMeATreasure, :canYouGiveMeATreasure, :haveStolen
      
+    
+    
+    def to_s()
+      " #{@name} \t level: #{@level} \t dead: #{@dead} \t enemy: #{@nenemy}"
+    end
   end
 
   
-  def to_s()
-      " #{@name} \t level: #{@level} \t dead: #{@dead} \t enemy: #{@nenemy}"
-  end
 end

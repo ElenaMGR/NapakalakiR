@@ -27,7 +27,7 @@ module NapakalakiGame
     
     
     def to_s
-      "Buen rollo: \n Tesoros ganados: #{@treasures}, Niveles ganados: #{@levels}"
+      "Prize: Tesoros ganados = #{@treasures} \t Niveles ganados: #{@levels} \n"
     end
 
   end
