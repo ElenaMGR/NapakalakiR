@@ -159,9 +159,10 @@ module NapakalakiGame
       # Si esta vacio el mazo de tesoros.
       if(@unusedTreasures.empty?)
         @unusedTreasures = @usedTreasures
+        @usedTreasures.clear
         shuffleTreasures();
       end
-     # nuevo_tesoro = @unusedTreasures.at(@unusedTreasures.length()-1);
+     # nuevo_tesoro = @unusedTreasures.at(@unusedTreasures.length-1);
       nuevo_tesoro = @unusedTreasures.pop
       return nuevo_tesoro;
     end
@@ -176,9 +177,10 @@ module NapakalakiGame
         # Si esta vacio el mazo de monstruos.
         if(@unusedMonsters.empty?)
             @unusedMonsters = @usedMonsters
+            @usedMonster.clear
             shuffleMonster();
         end
-        #nuevo_monstruo = @unusedMonsters.at(unusedMonsters.size()-1);
+        #nuevo_monstruo = @unusedMonsters.at(@unusedMonsters.length-1);
         nuevo_monstruo = @unusedMonsters.pop
         return nuevo_monstruo;
     end
