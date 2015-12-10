@@ -95,7 +95,7 @@ module NapakalakiGame
       else  # Si es un tesoro especifico se elimina
           i = 0
           no_encontrado = true
-          while(i < @specificVisibleTreasures && no_encontrado)
+          while(i < @specificVisibleTreasures.length && no_encontrado)
             if(@specificVisibleTreasures.at(i) == t)
               @specificVisibleTreasures.delete_at(i)
               no_encontrado = false
