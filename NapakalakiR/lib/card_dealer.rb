@@ -180,7 +180,7 @@ module NapakalakiGame
         # Si esta vacio el mazo de monstruos.
         if(@unusedMonsters.empty?)
             @unusedMonsters = @usedMonsters
-            @usedMonster.clear
+            @usedMonsters.clear
             shuffleMonster
         end
         #nuevo_monstruo = @unusedMonsters.at(@unusedMonsters.length-1);
