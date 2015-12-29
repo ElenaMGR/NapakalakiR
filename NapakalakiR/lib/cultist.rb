@@ -4,8 +4,18 @@
 
 module NapakalakiGame
   class Cultist
-    def initialize
+    
+    
+    def initialize(name,gainedlevel)
+      @name = name
+      @gainedLevels = gainedlevel
       
     end
+    
+    def getGainedLevels
+      return @gainedLevels
+    end
+    
+    
   end
 end
