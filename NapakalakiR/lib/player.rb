@@ -27,6 +27,17 @@ module NapakalakiGame
       @pendingBadConsequence = BadConsequence.newLevelNumberOfTreasures("", 0, 0, 0)
     end
     
+    def Player(p)
+      @name = p.getName
+      @dead = p.isDeath
+      @canISteal = p.canISteal
+      @level = p.getLevels
+      @hiddenTreasures = p.getHiddenTreasures
+      @visibleTreasures = p.getVisibleTreasures
+      # Supongo que el pending esta vacio.
+      @pendingBadConsequence = BadConsequence.newLevelNumberOfTreasures("", 0, 0, 0)
+    end
+    
     def getName
         return @name
     end
@@ -48,6 +59,10 @@ module NapakalakiGame
     
     def setEnemy(enemy)
         @enemy = enemy
+    end
+    
+    def getEnemy
+      return @enemy
     end
     
     def getLevels
@@ -82,6 +97,15 @@ module NapakalakiGame
       return combat_level
  
     end
+    
+    def getOponentLevel(m)
+      
+    end
+    
+    def shouldConvert
+      
+    end
+ 
     
     #Incrementa el nivel del jugador en i niveles
     def incrementLevels (l)
@@ -413,11 +437,12 @@ module NapakalakiGame
     end
     
     
-    private :bringToLife, :getCombatLevel, :incrementLevels, :decrementLevels
+    private :bringToLife, :incrementLevels, :decrementLevels
     private :setPendingBadConsequence, :applyPrize, :applyBadConsequence
     private :canMakeTreasureVisible, :howManyVisibleTreasures, :dieIfNoTreasures
     private :haveStolen
-     
+    
+    protected :setEnemy, :getEnemy, :shouldConvert, :getOponentLevel, :getCombatLevel
     
     
     def to_s()
