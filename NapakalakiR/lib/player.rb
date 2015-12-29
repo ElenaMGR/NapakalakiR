@@ -27,7 +27,7 @@ module NapakalakiGame
       @pendingBadConsequence = BadConsequence.newLevelNumberOfTreasures("", 0, 0, 0)
     end
     
-    def Player(p)
+    def newPlayer(p)
       @name = p.getName
       @dead = p.isDeath
       @canISteal = p.canISteal
