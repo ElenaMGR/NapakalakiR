@@ -4,8 +4,42 @@
 
 module NapakalakiGame
   class CultistPlayer < Player
-    def initialize
+    
+    @@totalCultistPlayers = 0
+    
+    def initialize(p,c)
+      super(p)
+      @myCultistCard = c
+      @@totalCultistPlayers += 1
+    end
+    
+    def getCombatLevel
       
     end
+    
+    def getOponentLevel(m)
+      
+    end
+    
+    def shouldConvert
+      
+    end
+    
+    def giveMeATreasure
+      
+    end
+    
+    def canYouGiveMeATreasure
+      
+    end
+    
+    def getTotalCultistPlayers
+      return @@totalCultistPlayers
+    end
+    
+    
+    private :giveMeATreasure, :canYouGiveMeATreasure
+    protected :getOponentLevel, :getCombatLevel
+    
   end
 end
