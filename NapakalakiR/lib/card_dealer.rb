@@ -5,6 +5,7 @@
 require_relative 'monster'
 require_relative 'treasure'
 require_relative 'treasure_kind'
+require_relative 'cultist'
 require 'singleton'
 
 module NapakalakiGame
@@ -20,6 +21,7 @@ module NapakalakiGame
       @usedMonsters = Array.new
       @usedTreasures = Array.new
       @unusedTreasures = Array.new
+      @unusedCultists = Array.new
     end
     
     # Inicializa el mazo de cartas de Tesoros.
@@ -143,6 +145,12 @@ module NapakalakiGame
       
     end
     
+    # Inicializa el mazo de cartas de sectarios
+    def initCultistCardDeck
+      
+    end
+    
+    
     # Baraja el mazo de cartas de tesoros
     def shuffleTreasures
       @unusedTreasures.shuffle!
@@ -152,6 +160,13 @@ module NapakalakiGame
     def shuffleMonster
       @unusedMonsters.shuffle!
     end
+    
+    # Baraja el mazo de cartas de sectarios
+    def shuffleCultist
+      @unusedCultists.shuffle!
+    end
+    
+    
     ##
      # Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
      # de él. 
@@ -186,6 +201,28 @@ module NapakalakiGame
         #nuevo_monstruo = @unusedMonsters.at(@unusedMonsters.length-1);
         nuevo_monstruo = @unusedMonsters.pop
         return nuevo_monstruo;
+    end
+    
+    #
+     # Devuelve el siguiente sectario que hay en el mazo de sectarios y lo 
+     # elimina de él. 
+     # Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     # al mazo de monstruos y lo baraja.
+     #
+    def nextMonster
+        # Si esta vacio el mazo de monstruos.
+        if(@unusedMonsters.empty?)
+            @unusedMonsters = @usedMonsters
+            @usedMonsters.clear
+            shuffleMonster
+        end
+        #nuevo_monstruo = @unusedMonsters.at(@unusedMonsters.length-1);
+        nuevo_monstruo = @unusedMonsters.pop
+        return nuevo_monstruo;
+    end
+    
+    def nextCultist
+      
     end
     
     # Introduce en el mazo de descartes de tesoros el tesoro t
