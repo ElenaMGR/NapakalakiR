@@ -15,11 +15,17 @@ module NapakalakiGame
     attr_reader :combatLevel
     attr_reader :badConsequence
    
-    def initialize(n,l,b,p)
+    def initialize(n,l,b,p,ic)
       @name = n
       @combatLevel = l
       @badConsequence = b
       @prize = p    
+      if !ic.nil?
+        @levelChangeAgainstCultistPlayer = ic
+      else
+        @levelChangeAgainstCultistPlayer = 0
+      end
+      
     end
     
     # Métodos get
@@ -44,6 +50,10 @@ module NapakalakiGame
     # Devuelve el número de tesoros ganados proporcionados por su buen rollo
     def getTreasuresGained
       return @prize.treasures      
+    end
+    
+    def getCombatLevelAgainstCultistPlayer
+      
     end
     
     def to_s
