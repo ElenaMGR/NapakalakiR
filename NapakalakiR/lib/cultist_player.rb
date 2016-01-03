@@ -22,7 +22,7 @@ module NapakalakiGame
     end
     
     def shouldConvert
-      
+      return false
     end
     
     def giveMeATreasure

@@ -101,8 +101,17 @@ module NapakalakiGame
       
     end
     
+ 
     def shouldConvert
+      d = Dice.instance
+      n = d.nextNumber
+      if (n==1)
+        shouldC=true
+      else
+         shouldC=false
+      end
       
+      return shouldC
     end
  
     
