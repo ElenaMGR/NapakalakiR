@@ -20,10 +20,10 @@ module NapakalakiGame
       @combatLevel = l
       @badConsequence = b
       @prize = p    
-      if !ic.nil?
-        @levelChangeAgainstCultistPlayer = ic
-      else
+      if ic.nil?
         @levelChangeAgainstCultistPlayer = 0
+      else
+        @levelChangeAgainstCultistPlayer = ic
       end
       
     end
