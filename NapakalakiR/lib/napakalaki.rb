@@ -112,9 +112,9 @@ module NapakalakiGame
       if (combatResult == CombatResult::LOSEANDCONVERT)
         cultis = CultistPlayer.new(@currentPlayer,@dealer.nextCultist)
         # Busco la posicion del jugador y la reemplazo.
-        @players.set(@players.indexOf(@currentPlayer), cultis)
+        @players[@players.index(@currentPlayer)] = cultis
         @currentPlayer = cultis;
-                    
+               
       end
       
       
