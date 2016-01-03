@@ -229,8 +229,14 @@ module NapakalakiGame
           cr = CombatResult::WIN
         end
       else
-        applyBadConsequence(m);
-        cr = CombatResult::LOSE
+        applyBadConsequence(m)
+        
+        if(shouldConvert)
+          cr = CombatResult.LOSEANDCONVERT
+        else
+          cr = CombatResult.LOSE 
+        end
+        
       end
         
       return cr
