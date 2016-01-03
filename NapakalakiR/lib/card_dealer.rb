@@ -163,13 +163,13 @@ module NapakalakiGame
       @unusedMonsters << Monster("Serpiente Político",8, badConsequence, prize,-2)
         
       visible = Array.new
-      visible << TreasureKind.HELMET
-      visible << TreasureKind.ARMOR
+      visible << TreasureKind::HELMET
+      visible << TreasureKind::ARMOR
         
       invisible = Array.new
-      invisible << TreasureKind.BOTHHANDS
-      invisible << TreasureKind.ONEHAND
-      invisible << TreasureKind.ONEHAND
+      invisible << TreasureKind::BOTHHANDS
+      invisible << TreasureKind::ONEHAND
+      invisible << TreasureKind::ONEHAND
       
       badConsequence= BadConsequence.newLevelSpecificTreasures("Pierdes tu casco y tu armadura visible. Pierdes tus manos ocultas.",0,visible,invisible);
       prize = Prize.new(1,1)
@@ -177,7 +177,7 @@ module NapakalakiGame
       
         
       badConsequence= BadConsequence.newLevelNumberOfTreasures("Pierdes 2 niveles.",2,0,0)
-      prize = Prize.new(4,2);
+      prize = Prize.new(4,2)
       @unusedMonsters << Monster("Shoggoth",16, badConsequence, prize,-4)
       
         
