@@ -232,9 +232,9 @@ module NapakalakiGame
         applyBadConsequence(m)
         
         if(shouldConvert)
-          cr = CombatResult.LOSEANDCONVERT
+          cr = CombatResult::LOSEANDCONVERT
         else
-          cr = CombatResult.LOSE 
+          cr = CombatResult::LOSE 
         end
         
       end
