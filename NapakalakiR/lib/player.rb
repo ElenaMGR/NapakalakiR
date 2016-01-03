@@ -98,7 +98,7 @@ module NapakalakiGame
     end
     
     def getOponentLevel(m)
-      
+      return m.getCombatLevel
     end
     
  
