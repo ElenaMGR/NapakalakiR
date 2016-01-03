@@ -217,8 +217,8 @@ module NapakalakiGame
      # @return resultado del combate.
      #
     def combat (m)
-      myLevel = getOponentLevel(m)
-      monsterLevel = m.getCombatLevel
+      myLevel = getCombatLevel
+      monsterLevel = getOponentLevel(m)
         
       if (myLevel>monsterLevel)
         applyPrize(m);
