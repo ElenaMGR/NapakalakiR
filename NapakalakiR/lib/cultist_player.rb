@@ -39,7 +39,7 @@ module NapakalakiGame
     
     
     private :giveMeATreasure, :canYouGiveMeATreasure
-    protected :getOponentLevel, :getCombatLevel
+    protected :getOponentLevel, :getCombatLevel, :shouldConvert
     
   end
 end
