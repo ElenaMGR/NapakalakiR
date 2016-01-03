@@ -109,6 +109,15 @@ module NapakalakiGame
      #
     def developCombat
       combatResult = @currentPlayer.combat(@currentMonster)
+      if (combatResult == CombatResult::LOSEANDCONVERT)
+        cultis = CultistPlayer.new(@currentPlayer,@dealer.nextCultist)
+        # Busco la posicion del jugador y la reemplazo.
+        @players.set(@players.indexOf(@currentPlayer), cultis)
+        @currentPlayer = cultis;
+                    
+      end
+      
+      
       @dealer.giveMonsterBack(@currentMonster)
       return combatResult
     end
