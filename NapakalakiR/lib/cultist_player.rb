@@ -39,7 +39,7 @@ module NapakalakiGame
     end
     
     def canYouGiveMeATreasure
-      
+      return !(super.getHiddenTreasures.empty?)
     end
     
     def getTotalCultistPlayers
