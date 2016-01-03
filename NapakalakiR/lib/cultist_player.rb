@@ -20,7 +20,7 @@ module NapakalakiGame
     end
     
     def getOponentLevel(m)
-      
+      return m.getCombatLevelAgainstCultistPlayer
     end
     
     def shouldConvert
