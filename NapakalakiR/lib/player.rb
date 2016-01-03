@@ -12,7 +12,7 @@ require_relative 'bad_consequence'
 module NapakalakiGame
   
   class Player
-    attr_reader :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures
+    attr_reader :name, :level, :dead, :canISteal, :hiddenTreasures, :visibleTreasures, :pendingBadConsequence
     attr_writer :enemy
   
     @@MAXLEVEL = 10 
@@ -34,8 +34,7 @@ module NapakalakiGame
       @level = p.getLevels
       @hiddenTreasures = p.getHiddenTreasures
       @visibleTreasures = p.getVisibleTreasures
-      # Supongo que el pending esta vacio.
-      @pendingBadConsequence = BadConsequence.newLevelNumberOfTreasures("", 0, 0, 0)
+      @pendingBadConsequence = p.pendingBadConsequence
     end
     
     def getName
