@@ -287,7 +287,7 @@ module NapakalakiGame
       shuffleTreasures
     end  
     
-  private :initTreasureCardDeck, :initMonsterCardDeck, :shuffleTreasures, :shuffleMonster
+  private :initTreasureCardDeck, :initMonsterCardDeck, :shuffleTreasures, :shuffleMonster, :shuffleCultist, :initCultistCardDeck
     
   end
 
