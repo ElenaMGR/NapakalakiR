@@ -28,7 +28,14 @@ module NapakalakiGame
     end
     
     def giveMeATreasure
-      
+      visibleT = super.getVisibleTreasures
+      # Genero un número aletorio
+      num = rand(1..visibleT.length)
+      # Elijo el tesoro a devolver
+      tesoro = visibleT.at(num)
+      #Elimino el tesoro
+      super.discardVisibleTreasure(tesoro)
+      return tesoro
     end
     
     def canYouGiveMeATreasure
