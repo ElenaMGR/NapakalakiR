@@ -282,9 +282,11 @@ module NapakalakiGame
     def initCards
       initTreasureCardDeck
       initMonsterCardDeck
+      initCultistCardDek
       # Barajamos los mazos de cartas
       shuffleMonster
       shuffleTreasures
+      shuffleCultist
     end  
     
   private :initTreasureCardDeck, :initMonsterCardDeck, :shuffleTreasures, :shuffleMonster, :shuffleCultist, :initCultistCardDeck
