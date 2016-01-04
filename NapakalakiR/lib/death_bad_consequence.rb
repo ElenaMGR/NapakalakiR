@@ -10,8 +10,8 @@ module NapakalakiGame
     
     attr_reader :death
     
-    def initialize (t, death)
-      super(t,Player.maxLevel,max_treasures,max_treasures)
+    def initialize (t, death = true)
+      super(t,Player.maxLevel,BadConsequence.max_treasures,BadConsequence.max_treasures)
       @death = death
     end
     
