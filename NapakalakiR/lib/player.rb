@@ -461,7 +461,7 @@ module NapakalakiGame
     
     
     def to_s()
-      " #{self.getName} \t level: #{self.getLevels} \t combat level: #{self.getCombatLevel} \t dead: #{self.isDeath} \t enemy: #{@enemy.getName}\n"
+      " #{self.getName} \t level: #{self.getLevels} \t combat level: #{self.getCombatLevel} \t dead: #{self.isDead} \t enemy: #{@enemy.getName}\n"
     end
   end
 

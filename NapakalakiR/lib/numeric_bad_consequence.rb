@@ -80,7 +80,7 @@ module NapakalakiGame
             
       end
       
-      nuevo = self.new(getText, getLevels, nVisible, nHidden)
+      nuevo = NumericBadConsequence.new(getText, getLevels, nVisible, nHidden)
       return nuevo
     end
   
