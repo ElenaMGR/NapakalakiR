@@ -8,6 +8,9 @@ module NapakalakiGame
     
     attr_reader :specificVisibleTreasures
     attr_reader :specificHiddenTreasures
+    
+    public_class_method :new
+    
     def initialize (t,l,v,h)
       super(t,l)
       @specificVisibleTreasures = v

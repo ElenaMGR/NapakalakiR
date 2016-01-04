@@ -4,10 +4,12 @@
 
 module NapakalakiGame
 
-  class NumericBadConsequence 
+  class NumericBadConsequence < BadConsequence
     
     attr_reader :nVisibleTreasures
     attr_reader :nHiddenTreasures
+    
+    public_class_method :new
    
     def initialize (t, l, nVisible, nHidden)
       super(t,l)
