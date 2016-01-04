@@ -158,12 +158,12 @@ module NapakalakiGame
         
       badConsequence = DeathBadConsequence.new("Hoy no es tu día de suerte. Mueres.", true)
       prize = Prize.new(2,5)
-      @unusedMonsters << Monster("El gran Cthulhu", 20, badConsequence, prize,4)
+      @unusedMonsters << Monster.new("El gran Cthulhu", 20, badConsequence, prize,4)
         
         
       badConsequence= NumericBadConsequence.new("Tu gobierno te recorta 2 niveles.",2,0,0)
       prize = Prize.new(2,1)
-      @unusedMonsters << Monster("Serpiente Político",8, badConsequence, prize,-2)
+      @unusedMonsters << Monster.new("Serpiente Político",8, badConsequence, prize,-2)
         
       visible = Array.new
       visible << TreasureKind::HELMET
@@ -176,17 +176,17 @@ module NapakalakiGame
       
       badConsequence= SpecificBadConsequence.new("Pierdes tu casco y tu armadura visible. Pierdes tus manos ocultas.",0,visible,invisible);
       prize = Prize.new(1,1)
-      @unusedMonsters << Monster("Felpuggoth", 2, badConsequence, prize,5)
+      @unusedMonsters << Monster.new("Felpuggoth", 2, badConsequence, prize,5)
       
         
       badConsequence= NumericBadConsequence.new("Pierdes 2 niveles.",2,0,0)
       prize = Prize.new(4,2)
-      @unusedMonsters << Monster("Shoggoth",16, badConsequence, prize,-4)
+      @unusedMonsters << Monster.new("Shoggoth",16, badConsequence, prize,-4)
       
         
       badConsequence= NumericBadConsequence.new("Pintalabios negro. Pierdes 2 niveles.",2,0,0)
       prize = Prize.new(1,1)
-      @unusedMonsters << Monster("Lolitagooth",2, badConsequence, prize,3)
+      @unusedMonsters << Monster.new("Lolitagooth",2, badConsequence, prize,3)
       
     end
     
