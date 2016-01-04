@@ -192,12 +192,12 @@ module NapakalakiGame
     
     # Inicializa el mazo de cartas de sectarios
     def initCultistCardDeck
-      @unusedCultist << Cultist.new("Sectario", 1)
-      @unusedCultist << Cultist.new("Sectario", 2)
-      @unusedCultist << Cultist.new("Sectario", 1)
-      @unusedCultist << Cultist.new("Sectario", 2)
-      @unusedCultist << Cultist.new("Sectario", 1)
-      @unusedCultist << Cultist.new("Sectario", 1)
+      @unusedCultists << Cultist.new("Sectario", 1)
+      @unusedCultists << Cultist.new("Sectario", 2)
+      @unusedCultists << Cultist.new("Sectario", 1)
+      @unusedCultists << Cultist.new("Sectario", 2)
+      @unusedCultists << Cultist.new("Sectario", 1)
+      @unusedCultists << Cultist.new("Sectario", 1)
     end
     
     

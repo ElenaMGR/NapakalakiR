@@ -88,7 +88,7 @@ module NapakalakiGame
            
       end
       
-      nuevo = SpecificBadConquecence.new(@text, @levels, visible, hidden)
+      nuevo = self.new(@text, @levels, visible, hidden)
       return nuevo
     end
     

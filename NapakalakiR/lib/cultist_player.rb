@@ -47,6 +47,11 @@ module NapakalakiGame
     end
     
     
+    def to_s()
+      "Jugador Sectario: "
+      super
+    end
+    
     private :giveMeATreasure, :canYouGiveMeATreasure
     protected :getOponentLevel, :getCombatLevel, :shouldConvert
     
