@@ -6,6 +6,9 @@ require_relative 'monster'
 require_relative 'treasure'
 require_relative 'treasure_kind'
 require_relative 'cultist'
+require_relative 'specific_bad_consequence'
+require_relative 'death_bad_consequence'
+require_relative 'numeric_bad_consequence'
 require 'singleton'
 
 module NapakalakiGame
