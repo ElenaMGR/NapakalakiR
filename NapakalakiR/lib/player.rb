@@ -457,7 +457,7 @@ module NapakalakiGame
     private :canMakeTreasureVisible, :howManyVisibleTreasures, :dieIfNoTreasures
     private :haveStolen
     
-    protected :setEnemy, :getEnemy, :shouldConvert, :getOponentLevel, :getCombatLevel
+    protected :getEnemy, :shouldConvert, :getOponentLevel, :getCombatLevel
     
     
     def to_s()

@@ -15,7 +15,7 @@ module NapakalakiGame
     attr_reader :combatLevel
     attr_reader :badConsequence
    
-    def initialize(n,l,b,p,ic)
+    def initialize(n,l,b,p,ic=nil)
       @name = n
       @combatLevel = l
       @badConsequence = b
