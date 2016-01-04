@@ -192,12 +192,12 @@ module NapakalakiGame
     
     # Inicializa el mazo de cartas de sectarios
     def initCultistCardDeck
-      @unusedCultist << Cultist("Sectario", 1)
-      @unusedCultist << Cultist("Sectario", 2)
-      @unusedCultist << Cultist("Sectario", 1)
-      @unusedCultist << Cultist("Sectario", 2)
-      @unusedCultist << Cultist("Sectario", 1)
-      @unusedCultist << Cultist("Sectario", 1)
+      @unusedCultist << Cultist.new("Sectario", 1)
+      @unusedCultist << Cultist.new("Sectario", 2)
+      @unusedCultist << Cultist.new("Sectario", 1)
+      @unusedCultist << Cultist.new("Sectario", 2)
+      @unusedCultist << Cultist.new("Sectario", 1)
+      @unusedCultist << Cultist.new("Sectario", 1)
     end
     
     
@@ -272,7 +272,8 @@ module NapakalakiGame
     end
     
     def nextCultist
-      
+      # Coge la útima carta del mazo de Cultist la elimina y retorna
+      return @unusedCultist.pop
     end
     
     # Introduce en el mazo de descartes de tesoros el tesoro t
@@ -290,7 +291,7 @@ module NapakalakiGame
     def initCards
       initTreasureCardDeck
       initMonsterCardDeck
-      initCultistCardDek
+      initCultistCardDeck
       # Barajamos los mazos de cartas
       shuffleMonster
       shuffleTreasures
