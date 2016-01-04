@@ -8,6 +8,7 @@ require_relative 'treasure'
 require_relative 'monster'
 require_relative 'card_dealer'
 require_relative 'combat_result'
+require_relative 'cultist_player'
 
 require 'singleton'
 
