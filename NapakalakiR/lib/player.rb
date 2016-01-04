@@ -8,6 +8,7 @@ require_relative 'dice'
 require_relative 'treasure_kind'
 require_relative 'monster'
 require_relative 'bad_consequence'
+require_relative 'numeric_bad_consequence'
 
 module NapakalakiGame
   
@@ -24,7 +25,7 @@ module NapakalakiGame
       @level = 1
       @hiddenTreasures = Array.new
       @visibleTreasures = Array.new
-      @pendingBadConsequence = BadConsequence.newLevelNumberOfTreasures("", 0, 0, 0)
+      @pendingBadConsequence = NumericBadConsequence.new("", 0, 0, 0)
     end
     
     def newPlayer(p)
