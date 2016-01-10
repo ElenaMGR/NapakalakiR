@@ -14,7 +14,7 @@ module NapakalakiGame
     end
     
     def getCombatLevel
-      combatL = super.getCombatLevel
+      combatL = super
       combatL += combatL*0.2 + @myCultistCard.getGainedLevels * @@totalCultistPlayers 
       return combatL.floor
     end
