@@ -6,28 +6,12 @@ require_relative 'numeric_bad_consequence'
 
 module NapakalakiGame
 
-  class DeathBadConsequence < NumericBadConsequence
+  class DeathBadConsequence < NumericBadConsequence  
     
-    attr_reader :death
-    
-    def initialize (t, death = true)
+    def initialize (t)
       super(t,Player.maxLevel,BadConsequence.max_treasures,BadConsequence.max_treasures)
-      @death = death
     end
-    
-    def isDeath
-        return @death
-    end
-    
-    def setDeath(d)
-      @death = d
-    end
-    
-    
-    def to_s
-      super 
-      "death: #{@death} \n"
-    end
+
   end
 
 
