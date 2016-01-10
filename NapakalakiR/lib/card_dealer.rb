@@ -273,7 +273,7 @@ module NapakalakiGame
     
     def nextCultist
       # Coge la útima carta del mazo de Cultist la elimina y retorna
-      return @unusedCultist.pop
+      return @unusedCultists.pop
     end
     
     # Introduce en el mazo de descartes de tesoros el tesoro t
