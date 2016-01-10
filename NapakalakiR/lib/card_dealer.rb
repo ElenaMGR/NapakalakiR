@@ -156,7 +156,7 @@ module NapakalakiGame
       @unusedMonsters << Monster.new("Testigos Oculares",6, badConsequence, prize,2)
      
         
-      badConsequence = DeathBadConsequence.new("Hoy no es tu día de suerte. Mueres.", true)
+      badConsequence = DeathBadConsequence.new("Hoy no es tu día de suerte. Mueres.")
       prize = Prize.new(2,5)
       @unusedMonsters << Monster.new("El gran Cthulhu", 20, badConsequence, prize,4)
         
