@@ -121,7 +121,7 @@ module NapakalakiGame
           end
         }
         
-        @currentPlayer = cultis;
+        @currentPlayer = cultis
                
       end
       
