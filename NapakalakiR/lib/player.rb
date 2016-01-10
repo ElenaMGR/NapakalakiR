@@ -460,8 +460,8 @@ module NapakalakiGame
     protected :shouldConvert, :getOponentLevel, :getCombatLevel
     
     
-    def to_s()
-      " #{self.getName} \t level: #{self.getLevels} \t combat level: #{self.getCombatLevel} \t dead: #{self.isDead} \t enemy: #{@enemy.getName}\n"
+    def to_s
+      " #{getName} \t level: #{getLevels} \t combat level: #{getCombatLevel} \t dead: #{isDead} \t enemy: #{getEnemy.getName}\n"
     end
   end
 

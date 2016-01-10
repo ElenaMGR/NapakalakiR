@@ -47,9 +47,8 @@ module NapakalakiGame
     end
     
     
-    def to_s()
-      "Jugador Sectario: "
-      "#{getName} \t level: #{getLevels} \t combat level: #{getCombatLevel} \t dead: #{isDead} \t enemy: #{@enemy.getName}\n"
+    def to_s
+      "Jugador Sectario: " + super
     end
     
     private :giveMeATreasure, :canYouGiveMeATreasure
