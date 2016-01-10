@@ -59,32 +59,60 @@ module NapakalakiGame
       hidden = Array.new
       visible = Array.new
       
+      #Hacemos una copia en un auxiliar de los tipos de un jugador
+      jugador = Array.new
+      
+      h.each { |treasure| 
+        jugador << treasure.getType
+        
+      }
+      
       # Si el jugador tiene objetos ocultos
       if(!h.empty? )
-        ntesoros = @specificHiddenTreasures.length
         #Si son objetos especificos los buscamos y eliminamos
-        h.each { |treasure| 
-          if (ntesoros > 0)
-            if(@specificHiddenTreasures.include?(treasure.getType) )
-              hidden << treasure.getType
-              ntesoros-=1
-            end  
+        for i in 0...@specificHiddenTreasures.length
+          encontrado = false
+          for j in 0...jugador.size
+            if encontrado
+              break
+            end
+            
+            if (@specificHiddenTreasures.at(i).eql?(jugador.at(j)))
+              hidden << jugador.at(j)
+              jugador.delete(j)
+              encontrado = true
+            end
+            
           end
-        }
+        end
               
       end
-            
+         
+      #Hacemos una copia en un auxiliar de los tipos de un jugador
+      jugador.clear
+      
+      v.each { |treasure| 
+        jugador << treasure.getType
+        
+      }
+      
       if(!v.empty? )
-        ntesoros = @specificVisibleTreasures.length
         #Si son objetos especificos los buscamos y eliminamos
-        v.each { |treasure| 
-          if (ntesoros > 0)
-            if(@specificVisibleTreasures.include?(treasure.getType) )
-              visible << treasure.getType
-              ntesoros-=1
+        for i in 0...@specificVisibleTreasures.length
+          encontrado = false
+          for j in 0...jugador.size
+            if encontrado
+              break
             end
+            
+            if (@specificVisibleTreasures.at(i).eql?(jugador.at(j)))
+              visible << jugador.at(j)
+              jugador.delete(j)
+              encontrado = true
+            end
+            
           end
-        }  
+        end
            
       end
       
