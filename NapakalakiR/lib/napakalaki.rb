@@ -116,7 +116,8 @@ module NapakalakiGame
         @players.insert(@players.index(@currentPlayer), cultis)
         
         @players.each { |jugador| 
-          if ((jugador.getEnemy).eql?(@currentPlayer))
+
+          if ((jugador.getEnemy).equal?(@currentPlayer))
             jugador.setEnemy(cultis)
           end
         }

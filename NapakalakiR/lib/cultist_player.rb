@@ -9,7 +9,8 @@ module NapakalakiGame
     @@totalCultistPlayers = 0
     
     def initialize(p,c)
-      super(p)
+      super(p.getName)
+      copiaPlayer(p)
       @myCultistCard = c
       @@totalCultistPlayers += 1
     end
@@ -49,7 +50,7 @@ module NapakalakiGame
     
     
     def to_s
-      "Jugador Sectario: #{getName} \t level: #{getLevels} \t combat level: #{getCombatLevel} \t dead: #{isDead} \t enemy: #{getEnemy.getName}\n" 
+      "Jugador Sectario " + super
     end
     
     private :giveMeATreasure, :canYouGiveMeATreasure

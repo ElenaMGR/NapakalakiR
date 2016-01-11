@@ -28,14 +28,15 @@ module NapakalakiGame
       @pendingBadConsequence = NumericBadConsequence.new("", 0, 0, 0)
     end
     
-    def newPlayer(p)
+    def copiaPlayer(p)
       @name = p.getName
-      @dead = p.isDeath
+      @dead = p.isDead
       @canISteal = p.canISteal
       @level = p.getLevels
       @hiddenTreasures = p.getHiddenTreasures
       @visibleTreasures = p.getVisibleTreasures
       @pendingBadConsequence = p.pendingBadConsequence
+      @enemy = p.getEnemy
     end
     
     def getName
@@ -461,7 +462,7 @@ module NapakalakiGame
     
     
     def to_s
-      " #{getName} \t level: #{getLevels} \t combat level: #{getCombatLevel} \t dead: #{isDead} \t enemy: #{getEnemy.getName}\n"
+      " #{@name} \t level: #{getLevels} \t combat level: #{getCombatLevel} \t dead: #{isDead} \t enemy: #{getEnemy.getName}\n"
     end
   end
 
