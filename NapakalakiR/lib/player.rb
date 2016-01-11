@@ -438,16 +438,20 @@ module NapakalakiGame
     
     # Elimina todos los tesoros del jugador.
     def discardAllTreasures
-      #listTreasure = Array.new
+      
+      dealer = CardDealer.instance
+      
       listTreasurev = Array.new(@visibleTreasures)
       listTreasurev.each{ |treasure|  
         discardVisibleTreasure(treasure)
+        dealer.giveTreasureBack(treasure)
       }
         
       #listTreasure = Array.new
       listTreasureh = Array.new(@hiddenTreasures)
       listTreasureh.each{ |treasure|    
         discardHiddenTreasure(treasure);
+        dealer.giveTreasureBack(treasure)
       }
      
     end
