@@ -39,13 +39,17 @@ module NapakalakiGame
     
     def substracVisibleTreasure (t)
       # Si es un numero se reduce en 1
-      @nVisibleTreasures-=1;
+      if @nVisibleTreasures>0
+        @nVisibleTreasures-=1;
+      end
     end
 
 
     def substracHiddenTreasure (t)
       # Si es un numero se reduce en 1
-      @nHiddenTreasures-=1;
+      if @nHiddenTreasures>0
+        @nHiddenTreasures-=1;
+      end
     end
     
     def adjustToFitTreasureList (v,h)
